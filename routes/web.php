@@ -26,6 +26,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+     //route for utility
+     Route::resource('/utilities', UtilityController::class);
+     Route::get('/confirm', 'App\Http\Controllers\UtilityController@confirm')->name('confirm');
+     Route::get('/edit{id}', [UtilityController::class, 'edit']);
+     Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
+     Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
+ 
 });
 
 require __DIR__.'/auth.php';
