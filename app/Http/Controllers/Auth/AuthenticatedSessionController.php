@@ -32,7 +32,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $user = Auth::user();
+
+        if($user->two_factor_secret == NULL){
+            return redirect()->intended(RouteServiceProvider::HOME);
+            
+        }else{
+            return view('auth.two-factor-challenge');
+        }
+        
     }
 
     /**
