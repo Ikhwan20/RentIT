@@ -26,8 +26,7 @@
       <div class="container">
           <ul class="navbar-nav d-none d-md-flex mr-auto">
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Renter</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Rentee</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
           </ul>
           <ul class="navbar-nav">
           <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
@@ -64,13 +63,22 @@
               <span class="badge badge-pill badge-danger notify">0</span>
             </div>
             <div class="widget-header icontext">
-              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+              <a href="{{ route('profile.edit') }}" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
               <div class="text">
-                <span class="text-muted">Welcome!</span>
-                <div> 
-                  <a href="{{ route('login') }}">Log In</a> |  
-                  <a href="{{ route('register') }}"> Register</a>
+              <span class="text">Welcome!</span><br>
+              @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-1 sm:block">
+                    @auth
+                    <div class="font-bold ml-2 text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-black dark:text-gray-500 underline">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-2 text-sm text-black dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
                 </div>
+                @endif
               </div>
             </div>
           </div> <!-- widgets-wrap.// -->
@@ -250,50 +258,19 @@
       </header><!-- sect-heading -->
       
       <div class="row">
+        @foreach($utility as $util)
         <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/5.jpg"> </a>
+          <div href="{{ url('/utilitydesc'.$util->id) }}" class="card card-product-grid">
+            <a href="{{ url('/utilitydesc'.$util->id) }}" class="img-wrap"> <img src="{{ asset($util->photo) }}"> </a>
             <figcaption class="info-wrap">
-              <a href="#" class="title">Laptop Bag</a>
+              <a href="{{ url('/utilitydesc'.$util->id) }}" class="title">{{ $util->name }}</a>
               
               
-              <div class="price mt-1">RM4.00/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM {{ $util->prices }}/hour</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/6.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Water Bottle</a>
-              
-              
-              <div class="price mt-1">RM2.00/day</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/7.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Healing Chair</a>
-              
-              
-              <div class="price mt-1">RM10.00/day</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/9.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Motorcycle Helmet</a>
-              
-              
-              <div class="price mt-1">RM8.00/day</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
+        @endforeach
       </div> <!-- row.// -->
       
       </div> <!-- container .//  -->

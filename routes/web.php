@@ -16,9 +16,7 @@ use App\Http\Controllers\BotManController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UtilityController::class, 'welcome']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,8 +33,10 @@ Route::middleware('auth')->group(function () {
      Route::get('/edit{id}', [UtilityController::class, 'edit']);
      Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
      Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
+     Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
  
 });
 
+Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
 Route::match(['get','post'],'/botman',[BotManController::class,'index']);
 require __DIR__.'/auth.php';
