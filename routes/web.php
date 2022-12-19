@@ -38,6 +38,5 @@ Route::middleware('auth')->group(function () {
  
 });
 
-Route::match(['get','post'],'/botman',[BotManController::class,'handle']);
-
+Route::match(['get','post'],'/botman',[BotManController::class,'index']);
 require __DIR__.'/auth.php';
