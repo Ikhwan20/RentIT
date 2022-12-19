@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UtilityController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,7 @@ Route::middleware('auth')->group(function () {
      Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
  
 });
+
+Route::match(['get','post'],'/botman',[BotManController::class,'handle']);
 
 require __DIR__.'/auth.php';
