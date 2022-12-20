@@ -70,14 +70,6 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-
-            <x-responsive-nav-link :href="route('utility')" :active="request()->routeIs('utility')">
-                {{ __('Manage Utilities') }}
-            </x-responsive-nav-link>
-
-            <x-responsive-nav-link :href="route('utility')" :active="request()->routeIs('utility')">
-                {{ __('Income') }}
-            </x-responsive-nav-link>
             
         </div>
 
