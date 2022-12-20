@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UtilityController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BotManController;
 
 /*
@@ -19,27 +18,31 @@ use App\Http\Controllers\BotManController;
 
 Route::get('/', [UtilityController::class, 'welcome']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
      //route for utility
-     Route::resource('/utilities', UtilityController::class);
-     Route::get('/confirm', 'App\Http\Controllers\UtilityController@confirm')->name('confirm');
-     Route::get('/edit{id}', [UtilityController::class, 'edit']);
-     Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
-     Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
+    Route::get('/utilityadmin', [UtilityController::class, 'index'])->name('utilityadmin');
+    Route::get('/utility', [UtilityController::class, 'show'])->name('utility');
+    Route::get('/confirm', 'App\Http\Controllers\UtilityController@confirm')->name('confirm');
+    Route::get('/edit{id}', [UtilityController::class, 'edit']);
+    Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
+    Route::delete('utility/{id}', [UtilityController::class, 'delete'])->name('utility.delete');
 
     Route::get('/user', [UserController::class, 'index'])->name('user');
-     Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
+    Route::delete('user/{id}', [UserController::class, 'delete'])->name('user.delete');
+
+    Route::get('/admindash', [UserController::class, 'admin'])->name('admindash');
  
 });
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
 Route::match(['get','post'],'/botman',[BotManController::class,'index']);
-require __DIR__.'/auth.php';

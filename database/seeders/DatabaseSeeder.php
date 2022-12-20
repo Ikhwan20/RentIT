@@ -14,12 +14,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@rentIT.com',
+            'password' => bcrypt('Pa$$word'),
+            'phone' => "0184098292",
+            'email_verified_at' => '2022-12-19',
+            'isAdmin' => true,
+        ]);
 
         \App\Models\User::factory()->create([
              'name' => 'Shawal',
              'email' => 'shawal@gmail.com',
              'password' => bcrypt('Pa$$word'),
+             'phone' => "0111918980",
              'email_verified_at' => '2022-12-19'
          ]);
 
@@ -27,6 +35,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Ikhwan',
             'email' => 'ikhwan@gmail.com',
             'password' => bcrypt('Pa$$word'),
+            'phone' => "0111918556",
             'email_verified_at' => '2022-12-19'
         ]);
 

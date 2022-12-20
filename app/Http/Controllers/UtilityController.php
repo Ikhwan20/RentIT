@@ -18,7 +18,7 @@ class UtilityController extends Controller
     public function index()
     {
         $utility = Utility::all();
-        return view('admin/utilityIndex');
+        return view('admin/utilityIndex', ['utility'=> $utility]);
     }
 
     /**
@@ -107,7 +107,7 @@ class UtilityController extends Controller
     public function delete($id)
     {
         Utility::where('id', $id)->delete();
-        return redirect('utility')->with('flash_message', 'Utility Deleted!');
+        return redirect()->back()->with('success', 'Utility Deleted');   
     }
 
     /**
