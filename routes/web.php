@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UtilityController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,8 @@ Route::middleware('auth')->group(function () {
      Route::get('/edit{id}', [UtilityController::class, 'edit']);
      Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
      Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user');
  
 });
 

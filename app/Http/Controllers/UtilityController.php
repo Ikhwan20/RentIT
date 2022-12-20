@@ -18,7 +18,7 @@ class UtilityController extends Controller
     public function index()
     {
         $utility = Utility::all();
-        return view('utility/utilityIndex');
+        return view('admin/utilityIndex');
     }
 
     /**
