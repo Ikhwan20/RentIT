@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UtilityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UtilityController::class, 'welcome']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,7 +36,10 @@ Route::middleware('auth')->group(function () {
      Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
 
     Route::get('/user', [UserController::class, 'index'])->name('user');
+     Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
  
 });
 
+Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
+Route::match(['get','post'],'/botman',[BotManController::class,'index']);
 require __DIR__.'/auth.php';

@@ -6,6 +6,35 @@
     </x-slot>
 
     <div class="py-12">
+        <div class="max-w-7xl mx-auto my-3 sm:px-6 lg:px-8 space-y-6">
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                <form method="POST" action="/user/two-factor-authentication">
+                    @csrf
+
+                    @if (auth()->user()->two_factor_secret)
+                        2FA is enabled <br><br>
+                        
+                        @method('DELETE')
+
+                        <div>
+                            {!! auth()->user()->twoFactorQrCodeSvg() !!}
+                        </div>
+
+                        <br><br>
+
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                            Disable 2FA
+                        </button>
+
+                        @else
+                        2FA IS DISABLED <br><br>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Enable 2FA
+                        </button>
+                    @endif
+                </form>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">

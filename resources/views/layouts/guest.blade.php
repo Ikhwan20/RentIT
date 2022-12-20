@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <link rel= "stylesheet" type="text/css" href="https://cdn,jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,6 +30,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
+    
     <body class="font-sans text-gray-900 antialiased">
         <header class="section-header">
 
@@ -46,26 +48,7 @@
               
             </div> <!-- container //  -->
             </nav> <!-- header-top-light.// -->
-            <section class="header-main border-bottom">
-              <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-2 col-6">
-                <a href="#" class="brand-wrap">
-                  RentalIT
-                </a> <!-- brand-wrap.// -->
-              </div>
-              <div class="col-lg-6 col-12 col-sm-12">
-                <form action="#" class="search">
-                  <div class="input-group w-100">
-                      <input type="text" class="form-control" placeholder="Search">
-                      <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </div>
-                    </div>
-                </form> <!-- search-wrap .end// -->
-              </div> <!-- col.// -->
+            
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="widgets-wrap float-md-right">
                   
@@ -75,20 +58,24 @@
             </div> <!-- row.// -->
               </div> <!-- container.// -->
             </section> <!-- header-main .// -->
-            
-            
-            
-          
-            
             </header> <!-- section-header.// -->
+            
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 
             </div>
+            
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
             </div>
         </div>
+        
     </body>
+    <script>
+      var botmanWidget = {
+          abo
+      };
+      </script>
+      <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </html>

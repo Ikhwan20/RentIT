@@ -57,7 +57,7 @@ class UtilityController extends Controller
     public function show()
     {
         $id = Auth::id();
-        $utility = Utility::select('select * from car where owner_id like ?', [$id]);
+        $utility = Utility::select('select * from utility where owner like ?', [$id]);
         return view('utility/utilityview', ['utility'=> $utility]);
     }
 
@@ -87,12 +87,13 @@ class UtilityController extends Controller
         $prices = $request->input('prices');
         $category = $request->input('category');
         $description = $request->input('description');
+        $owner = Auth::id();
 
         $fileName = time().$request->file('photo')->getClientOriginalName();
         $path = $request->file('photo')->storeAs('images', $fileName, 'public');
         $photo = '/storage/'.$path;
 
-        Product::where('id', $id)->update(['name'=>$name, 'prices'=>$prices, 'brand'=>$brand, 'category'=>$category, 'description'=>$description, 'photo'=>$photo]);
+        Product::where('id', $id)->update(['name'=>$name, 'prices'=>$prices, 'brand'=>$brand, 'category'=>$category, 'description'=>$description, 'owner'=>$owner, 'photo'=>$photo]);
 
         return redirect('utility')->with('flash_message', 'Utility Updated!');
     }
@@ -121,5 +122,15 @@ class UtilityController extends Controller
         $utility = Utility::where('name', 'LIKE', '%' . $searchtext . '%')->get();
  
         return view('utility/utility', compact('utility'));
+    }
+
+    public function welcome(){
+        $utility = Utility::all();
+        return view('welcome' , ['utility'=> $utility]);
+    }
+
+    public function utilitydesc($id){
+        $utility = utility::where('id', $id)->get();
+        return view('utility/utilitydesc', ['utility'=> $utility]);
     }
 }
