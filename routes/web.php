@@ -51,10 +51,13 @@ Route::match(['get','post'],'/botman',[BotManController::class,'index']);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/map', function() {
     return view('geolocate');
 });
 require __DIR__.'/auth.php';
+=======
+>>>>>>> 728966cca82caa7f3862f580c14671ff6796bf80
 =======
 >>>>>>> 728966cca82caa7f3862f580c14671ff6796bf80
 =======
