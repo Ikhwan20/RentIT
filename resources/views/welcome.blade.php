@@ -63,7 +63,7 @@
               <span class="badge badge-pill badge-danger notify">0</span>
             </div>
             <div class="widget-header icontext">
-              <a href="{{ route('profile.edit') }}" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+              <a href="{{ route('profile.show') }}" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
               <div class="text">
               <span class="text">Welcome!</span><br>
               @if (Route::has('login'))

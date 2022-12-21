@@ -12,7 +12,7 @@
                         <th scope="col" class="py-3 px-6">Phone</th>
                         <th scope="col" class="py-3 px-6">Email Verified at</th>
                         <th scope="col" class="py-3 px-6">Created At</th>
-                        <th scope="col" class="py-3 px-6">Update</th>
+                        <th scope="col" class="py-3 px-6">Phone</th>
                         <th scope="col" class="py-3 px-6">Delete</th>
                 </thead>
                 <tbody class="text-l ml-3 text-center">
@@ -25,7 +25,6 @@
                         <td>{{ $user->email_verified_at }}</td>
                         <td>{{ $user->created_at }}</td>
                         <td>{{ $user->phone }}</td>
-                        <td><a href="{{ url('/edit'.$user->id) }}" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">Edit</a></td>
                         <td><form method="POST" action="{{ route('user.delete', $user->id) }}">
                             @csrf
                             <input name="_method" type="hidden" value="DELETE">

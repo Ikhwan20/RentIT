@@ -1,15 +1,7 @@
-@extends('layouts.admin')
-
-@section('content')
+<x-admin-layout>
 
 <div class="pt-6 px-10 text-xl font-bold">
-    Product Lists
-</div>
-
-<div class="pt-6 px-10 ">
-    <a href="{{ url('/utilities/create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2 rounded-full" title="Add Utility">
-        Add New
-    </a>
+    Utility Lists
 </div>
 
 <br/>
@@ -31,7 +23,7 @@
                         <td>{{ $util->brand }}</td>
                         <td>{{ $util->prices }}</td>
                         <td>
-                            <img src="{{ asset($util->photo) }}" width= '150' height='150' class="img img-responsive" />
+                            <img src="{{ asset($util->photo) }}" width= '150' height='150' class="img" />
                         </td>
                         <td><form method="POST" action="{{ route('utility.delete', $util->id) }}">
                             @csrf
@@ -43,4 +35,4 @@
                 </tbody>
             </table>
 
-@stop
+</x-admin-layout>
