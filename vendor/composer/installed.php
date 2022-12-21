@@ -1,9 +1,15 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
+<<<<<<< Updated upstream
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => NULL,
+=======
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'de2aa5cac0dedf4be588312c852a38076656c2d2',
+>>>>>>> Stashed changes
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -446,9 +452,15 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
+<<<<<<< Updated upstream
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => NULL,
+=======
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'de2aa5cac0dedf4be588312c852a38076656c2d2',
+>>>>>>> Stashed changes
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -586,6 +598,15 @@
                 0 => '^1.0',
             ),
         ),
+        'munafio/chatify' => array(
+            'pretty_version' => 'v1.5.4',
+            'version' => '1.5.4.0',
+            'reference' => 'ee5cb04ab003590e56cae5fe9bec52bfeef95bcd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../munafio/chatify',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.0',
             'version' => '1.11.0.0',
@@ -664,6 +685,24 @@
             'reference' => '58c3f47f650c94ec05a151692652a868995d2938',
             'type' => 'library',
             'install_path' => __DIR__ . '/../paragonie/constant_time_encoding',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'paragonie/random_compat' => array(
+            'pretty_version' => 'v9.99.100',
+            'version' => '9.99.100.0',
+            'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/random_compat',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'paragonie/sodium_compat' => array(
+            'pretty_version' => 'v1.19.0',
+            'version' => '1.19.0.0',
+            'reference' => 'cb15e403ecbe6a6cc515f855c310eb6b1872a933',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/sodium_compat',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -869,6 +908,15 @@
             'reference' => '1acec99d6684a54ff92f8b548a4e41b566963778',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psy/psysh',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pusher/pusher-php-server' => array(
+            'pretty_version' => '7.2.1',
+            'version' => '7.2.1.0',
+            'reference' => '5d708d43d774218e1068037c56a887658a4930ac',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pusher/pusher-php-server',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

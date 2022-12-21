@@ -13,7 +13,12 @@
         "laravel/jetstream": "^2.13",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+<<<<<<< Updated upstream
         "livewire/livewire": "^2.5"
+=======
+        "munafio/chatify": "^1.5",
+        "twbs/bootstrap": "^5.2"
+>>>>>>> Stashed changes
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
