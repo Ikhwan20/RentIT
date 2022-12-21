@@ -42,4 +42,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
 Route::match(['get','post'],'/botman',[BotManController::class,'index']);
+Route::get('/map', function() {
+    return view('geolocate');
+});
 require __DIR__.'/auth.php';
