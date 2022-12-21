@@ -16,7 +16,7 @@ use App\Http\Controllers\BotManController;
 |
 */
 
-Route::get('/', [UtilityController::class, 'welcome']);
+Route::get('/', [UtilityController::class, 'welcome'])->name('welcome');
 
 Route::middleware([
     'auth:sanctum',
@@ -53,3 +53,4 @@ Route::get('/map', function() {
 });
 
 Route::get('/search', [UtilityController::class, 'search']);
+
