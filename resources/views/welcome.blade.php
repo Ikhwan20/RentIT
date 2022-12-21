@@ -11,9 +11,9 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/ui.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/ui.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
   
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
