@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/handheld fan.jpg',
             'category' => 'Entertainment',
             'description' => 'Handheld, easy to bring',
-            'owner' => '2',       
+            'owner' => '3',       
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/mini projector.jpg',
             'category' => 'Computers',
             'description' => 'Easy to bring',
-            'owner' => '2',       
+            'owner' => '3',       
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/hp laptop.jpg',
             'category' => 'Computers',
             'description' => '14" screen',
-            'owner' => '2',       
+            'owner' => '3',       
         ]);
 
         \App\Models\Utility::factory()->create([

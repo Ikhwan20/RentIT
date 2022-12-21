@@ -1,6 +1,6 @@
 <x-admin-layout>
 
-<div class="pt-6 px-10 text-xl font-bold">
+<div class="pt-6 px-4 text-xl font-bold">
     Utility Lists
 </div>
 

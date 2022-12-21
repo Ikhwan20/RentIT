@@ -30,8 +30,8 @@ Route::middleware([
 
 Route::middleware('auth')->group(function () {
      //route for utility
-    Route::get('/utilityadmin', [UtilityController::class, 'index'])->name('utilityadmin');
-    Route::get('/utility', [UtilityController::class, 'show'])->name('utility');
+    Route::get('/utilityadmin', [UtilityController::class, 'utilityList'])->name('utilityadmin');
+    Route::resource('/utility', UtilityController::class);
     Route::get('/confirm', 'App\Http\Controllers\UtilityController@confirm')->name('confirm');
     Route::get('/edit{id}', [UtilityController::class, 'edit']);
     Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
@@ -51,3 +51,5 @@ Route::match(['get','post'],'/botman',[BotManController::class,'index']);
 Route::get('/map', function() {
     return view('geolocate');
 });
+
+Route::get('/search', [UtilityController::class, 'search']);

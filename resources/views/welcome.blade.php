@@ -8,13 +8,13 @@
     <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/ui.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-        
-    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/ui.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+  
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
   </head>
@@ -45,9 +45,9 @@
           </a> <!-- brand-wrap.// -->
         </div>
         <div class="col-lg-6 col-12 col-sm-12">
-          <form action="#" class="search">
+        <form class="mt-10" type="get" action="{{ url('/search') }}">
             <div class="input-group w-100">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="search" id="default-search" class="form-control" name="query" placeholder="Search" required>
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit">
                     <i class="fa fa-search"></i>
@@ -63,14 +63,51 @@
               <span class="badge badge-pill badge-danger notify">0</span>
             </div>
             <div class="widget-header icontext">
-              <a href="{{ route('profile.show') }}" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
               <div class="text">
-              <span class="text">Welcome!</span><br>
               @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-1 sm:block">
+                <div class="hidden fixed top-0 right-0 px-6 py-1">
                     @auth
-                    <div class="font-bold ml-2 text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
+                    <div class="hidden sm:flex sm:items-center sm:ml-6">
+                    <x-jet-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                    <a href="{{ route('profile.show') }}" class="">
+                    @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                      <img class="icon icon-sm rounded-circle border" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     @else
+                      {{ Auth::user()->name }}
+                    @endif</a></x-slot>
+                  <x-slot name="content">
+                        <!-- Account Management -->
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Manage Account') }}
+                        </div>
+
+                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            {{ __('Profile') }}
+                        </x-jet-dropdown-link>
+
+                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                {{ __('API Tokens') }}
+                            </x-jet-dropdown-link>
+                        @endif
+
+                        <div class="border-t border-gray-100"></div>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                      @click.prevent="$root.submit();">
+                                {{ __('Log Out') }}
+                            </x-jet-dropdown-link>
+                        </form>
+                  </x-slot>
+                  </x-jet-dropdown>
+                  </div>
+                    @else
+                    <span class="text">Welcome!</span><br>
                         <a href="{{ route('login') }}" class="text-sm text-black dark:text-gray-500 underline">Log in</a>
 
                         @if (Route::has('register'))
@@ -98,7 +135,7 @@
           <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i class="fa fa-bars"></i>    All category</strong></a>
+                <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i class="fa fa-bars"></i>  All category</strong></a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">Dry Foods</a>
                   <a class="dropdown-item" href="#">Room interior</a>
@@ -106,19 +143,25 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Clothing</a>
+                <a class="nav-link" href="#">Kitchen & Laundry</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sport Equipment</a>
+                <a class="nav-link" href="#">Mobile Phones</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Electronics</a>
+                <a class="nav-link" href="#">Entertainment</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Toys</a>
+                <a class="nav-link" href="#">Computers</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Furnitures</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home & Garden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Others</a>
               </li>
             </ul>
           </div> <!-- collapse .// -->

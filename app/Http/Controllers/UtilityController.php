@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Utility;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UtilityController extends Controller
 {
@@ -16,6 +17,13 @@ class UtilityController extends Controller
 
      //for admin use
     public function index()
+    {
+        $id = Auth::id();
+        $utility = DB::table('utility')->where('owner', $id)->get();
+        return view('utility/utilityview', ['utility'=> $utility]);
+    }
+
+    public function utilityList()
     {
         $utility = Utility::all();
         return view('admin/utilityIndex', ['utility'=> $utility]);
@@ -57,7 +65,7 @@ class UtilityController extends Controller
     public function show()
     {
         $id = Auth::id();
-        $utility = Utility::select('select * from utility where owner like ?', [$id]);
+        $utility = DB::table('utility')->where('owner', $id)->get();
         return view('utility/utilityview', ['utility'=> $utility]);
     }
 
@@ -121,7 +129,7 @@ class UtilityController extends Controller
         $searchtext = $_GET['query'];
         $utility = Utility::where('name', 'LIKE', '%' . $searchtext . '%')->get();
  
-        return view('utility/utility', compact('utility'));
+        return view('utility/utilitydesc', ['utility'=> $utility]);
     }
 
     public function welcome(){
