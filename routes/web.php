@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UtilityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotManController;
+use App\Http\Controllers\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,7 @@ Route::get('/map', function() {
 
 Route::get('/search', [UtilityController::class, 'search']);
 
+
+Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
+
+Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');

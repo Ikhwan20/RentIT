@@ -162,24 +162,52 @@
                             <div class="enabled items-center align-center relative" data-target="product.variant" data-variant="24962">
                                 <label for="from">From: </label>
                                 <select name="from" id="from">
-                                    <option value="1">1:00</option>
-                                    <option value="2">2:00</option>
-                                    <option value="3">3:00</option>
-                                    <option value="4">4:00</option>
-                                    <option value="5">5:00</option>
+                                    <option value="1">7:00</option>
+                                    <option value="2">8:00</option>
+                                    <option value="3">9:00</option>
+                                    <option value="4">10:00</option>
+                                    <option value="5">11:00</option>
+                                    <option value="5">12:00</option>
+                                    <option value="5">13:00</option>
+                                    <option value="5">14:00</option>
+                                    <option value="5">15:00</option>
+                                    <option value="5">16:00</option>
+                                    <option value="5">17:00</option>
+                                    <option value="5">18:00</option>
+                                    <option value="5">19:00</option>
+                                    <option value="5">20:00</option>
+                                    <option value="5">21:00</option>
+                                    <option value="5">22:00</option>
+                                    <option value="5">23:00</option>
+                                    <option value="5">00:00</option>
                                 </select>
                                 <label for="to">To: </label>
                                 <select name="to" id="to">
-                                    <option value="1">1:00</option>
-                                    <option value="2">2:00</option>
-                                    <option value="3">3:00</option>
-                                    <option value="4">4:00</option>
-                                    <option value="5">5:00</option>
+                                    <option value="1">7:00</option>
+                                    <option value="2">8:00</option>
+                                    <option value="3">9:00</option>
+                                    <option value="4">10:00</option>
+                                    <option value="5">11:00</option>
+                                    <option value="5">12:00</option>
+                                    <option value="5">13:00</option>
+                                    <option value="5">14:00</option>
+                                    <option value="5">15:00</option>
+                                    <option value="5">16:00</option>
+                                    <option value="5">17:00</option>
+                                    <option value="5">18:00</option>
+                                    <option value="5">19:00</option>
+                                    <option value="5">20:00</option>
+                                    <option value="5">21:00</option>
+                                    <option value="5">22:00</option>
+                                    <option value="5">23:00</option>
+                                    <option value="5">00:00</option>
                                 </select>
                                 <br><br>
-                                <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-action="product#addToBasket">
+                                <form action="/create-checkout-session.php" method="POST">
+                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
                                     Checkout
                                 </button>
+                                </form>
                             </div>
                         </div>
                     </div>
