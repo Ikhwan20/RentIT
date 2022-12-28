@@ -12,6 +12,11 @@ class Order extends Model
     protected $table = 'order';
 
     protected $fillable = [
-        'duration'
+        'duration',
+        'start',
+        'end',
+        'totalPrice',
+        'renter',
+        'utility'
     ];
 }

@@ -9,19 +9,19 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @vite(['resources/css/bootstrap.css'])
-        @vite(['resources/css/ui.css'])
-        @vite(['resources/css/responsive.css'])
+        @vite(['assets/css/bootstrap.css'])
+        @vite(['assets/css/ui.css'])
+        @vite(['assets/css/responsive.css'])
 
         <!-- Styles -->
         @livewireStyles
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width",intial-scale=1">
         <title>RentalIT</title>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel= "stylesheet" type="text/css" href="https://cdn,jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
         <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>

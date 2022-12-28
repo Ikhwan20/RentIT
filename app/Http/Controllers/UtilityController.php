@@ -141,4 +141,11 @@ class UtilityController extends Controller
         $utility = utility::where('id', $id)->get();
         return view('utility/utilitydesc', ['utility'=> $utility]);
     }
+
+    public function category($cat)
+    {
+        $utility = Utility::where('category', $cat)->get();
+
+        return view('utility/utilitydesc', compact('utility'));
+    }
 }

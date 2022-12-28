@@ -59,7 +59,7 @@
         <div class="col-lg-4 col-sm-6 col-12">
           <div class="widgets-wrap float-md-right">
             <div class="widget-header  mr-3">
-              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-heart"></i></a>
               <span class="badge badge-pill badge-danger notify">0</span>
             </div>
             <div class="widget-header icontext">
@@ -143,25 +143,25 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Kitchen & Laundry</a>
+                <a class="nav-link" href="{{ url('/category'.'Kitchen & Laundry') }}">Kitchen & Laundry</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Mobile Phones</a>
+                <a class="nav-link" href="{{ url('/category'.'Mobile Phones') }}">Mobile Phones</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Entertainment</a>
+                <a class="nav-link" href="{{ url('/category'.'Entertainment') }}">Entertainment</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Computers</a>
+                <a class="nav-link" href="{{ url('/category'.'Computers') }}">Computers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Furnitures</a>
+                <a class="nav-link" href="{{ url('/category'.'Furnitures') }}">Furnitures</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Home & Garden</a>
+                <a class="nav-link" href="{{ url('/category'.'Home & Garden') }}">Home & Garden</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Others</a>
+                <a class="nav-link" href="{{ url('/category'.'Others') }}">Others</a>
               </li>
             </ul>
           </div> <!-- collapse .// -->
@@ -394,10 +394,10 @@
               <aside class="col-md col-6">
                 <h6 class="title">FAQ</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="#">How to be renter?</a></li>
-                  <li> <a href="#">How to be rentee?</a></li>
-                  <li> <a href="#">Refund policy</a></li>
-                  <li> <a href="#">Payment term</a></li>
+                  <li> <a href="/paymentfaq">How to be renter?</a></li>
+                  <li> <a href="/renteefaq">How to be rentee?</a></li>
+                  <li> <a href="/refundfaq">Refund policy</a></li>
+                  <li> <a href="/paymentfaq">Payment term</a></li>
                 </ul>
               </aside>
               <aside class="col-md col-6">

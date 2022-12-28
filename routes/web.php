@@ -5,6 +5,7 @@ use App\Http\Controllers\UtilityController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\StripeController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/utility', UtilityController::class);
     Route::get('/confirm', 'App\Http\Controllers\UtilityController@confirm')->name('confirm');
     Route::get('/edit{id}', [UtilityController::class, 'edit']);
+    Route::get('/category{category}', [UtilityController::class, 'category']);
     Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
     Route::delete('utility/{id}', [UtilityController::class, 'delete'])->name('utility.delete');
 
@@ -42,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('user/{id}', [UserController::class, 'delete'])->name('user.delete');
 
     Route::get('/admindash', [UserController::class, 'admin'])->name('admindash');
+
+    Route::post('/createorder', [OrderController::class, 'store']);
  
 });
 
@@ -59,3 +63,19 @@ Route::get('/search', [UtilityController::class, 'search']);
 Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
 
 Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');
+
+Route::get('/paymentfaq', function(){
+    return view('FAQ/payment');
+});
+
+Route::get('/refundfaq', function(){
+    return view('FAQ/refund');
+});
+
+Route::get('/renteefaq', function(){
+    return view('FAQ/rentee');
+});
+
+Route::get('/renterfaq', function(){
+    return view('FAQ/renter');
+});

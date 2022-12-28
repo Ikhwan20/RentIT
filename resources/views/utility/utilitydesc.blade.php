@@ -87,7 +87,7 @@
         <div class="col-lg-4 col-sm-6 col-12">
           <div class="widgets-wrap float-md-right">
             <div class="widget-header  mr-3">
-              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-heart"></i></a>
               <span class="badge badge-pill badge-danger notify">0</span>
             </div>
             <div class="widget-header icontext">
@@ -116,7 +116,8 @@
       </section> <!-- header-main .// -->
     @foreach($utility as $util)
     <div class="">
-        <form action="/basket?auto_applying_coupon_code=&amp;template=product&amp;variant_id=24962&amp;id=24962" class="flex w-full items-center justify-center mt-10" >
+        <form action="{{ url('/createorder') }}" method="POST" enctype="multipart/form-data" class="flex w-full items-center justify-center mt-10" >
+        @csrf    
             <div class="" >
                 <div class="">
                     <div class="">
@@ -160,52 +161,56 @@
                         </div>
                         <div class="mt-4 md:mt-7">
                             <div class="enabled items-center align-center relative" data-target="product.variant" data-variant="24962">
-                                <label for="from">From: </label>
-                                <select name="from" id="from">
-                                    <option value="1">7:00</option>
-                                    <option value="2">8:00</option>
-                                    <option value="3">9:00</option>
-                                    <option value="4">10:00</option>
-                                    <option value="5">11:00</option>
-                                    <option value="5">12:00</option>
-                                    <option value="5">13:00</option>
-                                    <option value="5">14:00</option>
-                                    <option value="5">15:00</option>
-                                    <option value="5">16:00</option>
-                                    <option value="5">17:00</option>
-                                    <option value="5">18:00</option>
-                                    <option value="5">19:00</option>
-                                    <option value="5">20:00</option>
-                                    <option value="5">21:00</option>
-                                    <option value="5">22:00</option>
-                                    <option value="5">23:00</option>
-                                    <option value="5">00:00</option>
+                                
+                                <div hidden>
+                                    <label for="utility"></label>
+                                    <input id="utility" class="" type="text" name="utility" value="{{ $util->id }}" required/>
+                                </div>
+                                <label for="start">From: </label>
+                                <select name="start">
+                                    <option value="7">7:00</option>
+                                    <option value="8">8:00</option>
+                                    <option value="9">9:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                    <option value="24">00:00</option>
                                 </select>
-                                <label for="to">To: </label>
-                                <select name="to" id="to">
-                                    <option value="1">7:00</option>
-                                    <option value="2">8:00</option>
-                                    <option value="3">9:00</option>
-                                    <option value="4">10:00</option>
-                                    <option value="5">11:00</option>
-                                    <option value="5">12:00</option>
-                                    <option value="5">13:00</option>
-                                    <option value="5">14:00</option>
-                                    <option value="5">15:00</option>
-                                    <option value="5">16:00</option>
-                                    <option value="5">17:00</option>
-                                    <option value="5">18:00</option>
-                                    <option value="5">19:00</option>
-                                    <option value="5">20:00</option>
-                                    <option value="5">21:00</option>
-                                    <option value="5">22:00</option>
-                                    <option value="5">23:00</option>
-                                    <option value="5">00:00</option>
+                                <label for="end">To: </label>
+                                <select name="end">
+                                <option value="7">7:00</option>
+                                    <option value="8">8:00</option>
+                                    <option value="9">9:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                    <option value="24">00:00</option>
                                 </select>
                                 <br><br>
-                                <form action="/create-checkout-session.php" method="POST">
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
-                                    Checkout
+                                    Rent Now
                                 </button>
                                 </form>
                             </div>
@@ -215,7 +220,6 @@
             </div>
         </form>
     </div>
-    @endforeach
     <div class = "m-10">
         <header class="paragraphs space-y-4">
             <h3 class="text-3xl lg:text-4xl">Description</h3>
@@ -224,6 +228,8 @@
             </div>
         </header>
     <div>
+    @endforeach
+    
     <div class="m-4 p-4 overflow-hidden">
         <section class="">
             <header class="mb-4">

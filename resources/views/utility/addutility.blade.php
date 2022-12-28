@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <div class="grid place-items-center">
-        <form class="" action="{{ url('utilities') }}" method="POST" enctype="multipart/form-data">
+        <form class="" action="{{ url('utility') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <p class="font-bold text-xl mt-2">Add utility</p>
 
