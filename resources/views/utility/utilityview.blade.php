@@ -1,11 +1,11 @@
 <x-app-layout>
 
-<div class="pt-6 px-10 text-xl font-bold">
+<div class="pt-6 mx-6 text-xl font-bold">
     Utility Lists
 </div>
 
 <div class="pt-6 px-10 ">
-    <a href="{{ url('/utilities/create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2 rounded-full" title="Add Utility">
+    <a href="{{ url('/utility/create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-2 rounded-full" title="Add Utility">
         Add New
     </a>
 </div>
@@ -21,6 +21,7 @@
                         <th scope="col" class="py-3 px-6">Photo</th>
                         <th scope="col" class="py-3 px-6">Update</th>
                         <th scope="col" class="py-3 px-6">Delete</th>
+                    </tr>
                 </thead>
                 <tbody class="text-l ml-3 text-center">
                 @foreach($utility as $util)

@@ -1,6 +1,5 @@
-@extends('layouts.admin')
+<x-app-layout>
 
-@section('content')
 <div class="grid place-items-center">
         <form class="" action="{{ route('utility.update', $utility[0]->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -61,4 +60,4 @@
             </button>
         </form>
 </div>
-@stop
+</x-app-layout>
