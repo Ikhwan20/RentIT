@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admindash', [UserController::class, 'admin'])->name('admindash');
 
     Route::post('/createorder', [OrderController::class, 'store']);
+    Route::get('/orderlist', [OrderController::class, 'showorder'])->name('order.list');
  
 });
 
@@ -57,7 +58,6 @@ Route::get('/map', function() {
     return view('geolocate');
 });
 
-require __DIR__.'/auth.php';
 Route::get('/search', [UtilityController::class, 'search']);
 
 
