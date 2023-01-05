@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admindash', [UserController::class, 'admin'])->name('admindash');
 
     Route::post('/createorder', [OrderController::class, 'store']);
+    Route::get('/orderlist', [OrderController::class, 'showorder'])->name('order.list');
  
 });
 
@@ -124,3 +126,11 @@ Route::get('/account', function(){
 Route::get('/myorders', function(){
     return view('FAQ/renter');
 });
+
+Route::get('/check', function(){
+    return view('utilitiescheck');
+});
+
+
+Route::post('/check', [ImageController::class, 'upload']);
+Route::get('/check', [ImageController::class, 'render']);
