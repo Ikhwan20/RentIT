@@ -7,7 +7,7 @@
   <h1>Before: </h1>
 
   <div>
-  <img src="public/images/profile/" id="imageName" class="object-cover w-24 h-24 float-left mr-5">
+  <img src="public/images/profile/{{$name}}" id="imageName" class="object-cover w-24 h-24 float-left mr-5">
   </div>
 
   <div>

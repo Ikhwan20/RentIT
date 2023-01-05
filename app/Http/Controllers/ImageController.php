@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
+    public $tempvar;
+
     public function upload(Request $request) {
  
        $name = $request->file('image')->getClientOriginalName();
