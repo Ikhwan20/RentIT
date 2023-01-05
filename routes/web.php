@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,3 +81,11 @@ Route::get('/renteefaq', function(){
 Route::get('/renterfaq', function(){
     return view('FAQ/renter');
 });
+
+Route::get('/check', function(){
+    return view('utilitiescheck');
+});
+
+
+Route::post('/check', [ImageController::class, 'upload']);
+Route::get('/check', [ImageController::class, 'render']);
