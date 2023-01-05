@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Maize\Markable\Markable;
+use Maize\Markable\Models\Favorite;
 
 class Utility extends Model
 {
-    use HasFactory;
+    use HasFactory, Markable;
 
     protected $table = 'utility';
 
@@ -18,5 +20,9 @@ class Utility extends Model
         'photo',
         'category',
         'description',
+    ];
+
+    protected static $marks = [
+        Favorite::class,
     ];
 }

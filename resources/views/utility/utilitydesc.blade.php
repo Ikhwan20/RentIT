@@ -212,7 +212,17 @@
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
                                     Rent Now
                                 </button>
+                            </form>
+                                
+                                <form action="{{ route('favorite.add', $util->id) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
+                                        Add to wishlist
+                                    </button>
                                 </form>
+
+                                
                             </div>
                         </div>
                     </div>

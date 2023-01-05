@@ -7,6 +7,7 @@ use App\Http\Controllers\BotManController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/createorder', [OrderController::class, 'store']);
     Route::get('/orderlist', [OrderController::class, 'showorder'])->name('order.list');
  
+    Route::post('favorite-add/{id}', [WishlistController::class, 'favoriteAdd'])->name('favorite.add');
+    Route::delete('favorite-remove/{id}', [WishlistController::class, 'favoriteRemove'])->name('favorite.remove');
+    Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
 });
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
