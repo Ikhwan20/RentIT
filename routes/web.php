@@ -57,7 +57,7 @@ Route::get('/map', function() {
     return view('geolocate');
 });
 
-require __DIR__.'/auth.php';
+
 Route::get('/search', [UtilityController::class, 'search']);
 
 
@@ -77,6 +77,50 @@ Route::get('/renteefaq', function(){
     return view('FAQ/rentee');
 });
 
-Route::get('/renterfaq', function(){
+Route::get('/Aboutus', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/Career', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/rules', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/coverarea', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/contactus', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/orderstatus', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/shipping', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/opendispute', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/userlogin', function(){
+    return view('login');
+});
+
+Route::get('/userregister', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/account', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/myorders', function(){
     return view('FAQ/renter');
 });

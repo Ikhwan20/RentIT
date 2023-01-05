@@ -403,28 +403,28 @@
               <aside class="col-md col-6">
                 <h6 class="title">Company</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="#">About us</a></li>
-                  <li> <a href="#">Career</a></li>
-                  <li> <a href="#">Rules and terms</a></li>
-                  <li> <a href="#">Cover Area</a></li>
+                  <li> <a href="/Aboutus">About us</a></li>
+                  <li> <a href="/Career">Career</a></li>
+                  <li> <a href="rules">Rules and terms</a></li>
+                  <li> <a href="coverarea">Cover Area</a></li>
                 </ul>
               </aside>
               <aside class="col-md col-6">
                 <h6 class="title">Help</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="#">Contact us</a></li>
-                  <li> <a href="#">Order status</a></li>
-                  <li> <a href="#">Shipping info</a></li>
-                  <li> <a href="#">Open dispute</a></li>
+                  <li> <a href="contactus">Contact us</a></li>
+                  <li> <a href="orderstatus">Order status</a></li>
+                  <li> <a href="shipping">Shipping info</a></li>
+                  <li> <a href="opendispute">Open dispute</a></li>
                 </ul>
               </aside>
               <aside class="col-md col-6">
                 <h6 class="title">Account</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="#"> User Login </a></li>
-                  <li> <a href="#"> User register </a></li>
-                  <li> <a href="#"> Account Setting </a></li>
-                  <li> <a href="#"> My Orders </a></li>
+                  <li> <a href="userlogin"> User Login </a></li>
+                  <li> <a href="userregister"> User register </a></li>
+                  <li> <a href="account"> Account Setting </a></li>
+                  <li> <a href="myorders"> My Orders </a></li>
                 </ul>
               </aside>
               
