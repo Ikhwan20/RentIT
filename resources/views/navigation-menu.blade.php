@@ -18,6 +18,9 @@
                     <x-jet-nav-link href="/utility" :active="request()->routeIs('/utility')">
                         {{ __('Rent your utility') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="/orderlist" :active="request()->routeIs('/orderlist')">
+                        {{ __('Show Rental') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 

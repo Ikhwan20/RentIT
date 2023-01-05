@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Utility;
 use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -25,5 +26,11 @@ class OrderController extends Controller
 
         $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'start'=>$start, 'end'=>$end, 'duration'=>$duration, 'totalPrice'=>$totalPrice]);
         return view('stripe', ['order'=> $order]);
+    }
+
+    public function showorder(){
+        $id = Auth::id();
+        $order = Order::where('renter', $id)->get();
+        return view('utility/order', ['orders'=> $order]);
     }
 }
