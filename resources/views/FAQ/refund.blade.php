@@ -1,5 +1,13 @@
 <x-app-layout>
+  <div>
+    <style>
+      h2{
+        padding-left:5%;
+      }
+      </style>
+  </div>
     <div>
+
       <h1 style="text-align:center";><b>Return and Refund Policy</b></h1>
       <br>
       <h2>Policy </h2>
@@ -26,7 +34,7 @@
           <li>Submit the form</li>
       </ol>
     <br><br>
-    <form method="post" action="//submit.form" onSubmit="return validateForm();">
+    <form method="post" action="//submit.form" onSubmit="return validateForm();" styl="text-align:center;">
         <div style="max-width: 400px;">
         </div>
         <div style="padding-bottom: 18px;font-size : 24px;">Report An Issue</div>
@@ -64,7 +72,7 @@
         <div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit"/></div>
         <div>
         <div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form to email</a></div>
-        <script src="https://www.100forms.com/js/FORMKEY:2XNKCQE24JXF/SEND:my@email.com" type="text/javascript"></script>
+        <script src="https://www.100forms.com/js/FORMKEY:2XNKCQE24JXF/SEND:rajashawal246@gmail.com" type="text/javascript"></script>
         </div>
         </form>
         
