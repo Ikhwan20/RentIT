@@ -1,133 +1,103 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width",intial-scale=1">
-    <title>RentalIT</title>
-    <link rel= "stylesheet" type="text/css" href="https://cdn,jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
-    <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<x-app-layout>
+  <div>
+    <style>
+      h2{
+        padding-left:5%;
+      }
+      </style>
+  </div>
+    <div>
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/ui.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-  
-    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-  </head>
-
-  <body>
-    <header class="section-header">
-
-      <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
-      <div class="container">
-          <ul class="navbar-nav d-none d-md-flex mr-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
-          </ul>
-          <ul class="navbar-nav">
-          <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
-          
-        </ul> <!-- list-inline //  -->
-        
-      </div> <!-- container //  -->
-      </nav> <!-- header-top-light.// -->
+      <h1 style="text-align:center";><b>Return and Refund Policy</b></h1>
+      <br>
+      <h2>Policy </h2>
       
-      <section class="header-main border-bottom">
-        <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-2 col-6">
-          <a href="#" class="brand-wrap">
-            RentalIT
-          </a> <!-- brand-wrap.// -->
+      <p>We always make sure our users satisfy with our service. To ensure both party can satisy with our service, we implement certain policy to proctect both renter and rentee</p>
+    
+      <p>For any defect/broken utilities that been received either renter or rentee, we will ask the respective user to return back to the owner as we always keep policy to always ensure every item that been display in our website must been in good condition</p>
+     
+      <p>For any refund utilites, the renter will have 48 hour to ask any renfund IF the utilities received had problem.</p>
+      <br>
+      <p><i> any inquries you may contact our supportdesk via chatBot</i></p>
+
+
+      <h3>Guide To Return and Refund :</h3>
+      <ol>
+          <li>Go to refund policy page</li>
+          <br>
+          <li>Snap pictures of the defective utilities</li>
+          <br>
+          <li>Fill out the form</li>
+          <br>
+          <li>Describe the problem in the form box</li>
+          <br>
+          <li>Submit the form</li>
+      </ol>
+    <br><br>
+    <form method="post" action="//submit.form" onSubmit="return validateForm();" styl="text-align:center;">
+        <div style="max-width: 400px;">
         </div>
-        <div class="col-lg-6 col-12 col-sm-12">
-        <form class="mt-10" type="get" action="{{ url('/search') }}">
-            <div class="input-group w-100">
-                <input type="search" id="default-search" class="form-control" name="query" placeholder="Search" required>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-              </div>
-          </form> <!-- search-wrap .end// -->
-        </div> <!-- col.// -->
-        <div class="col-lg-4 col-sm-6 col-12">
-          <div class="widgets-wrap float-md-right">
-            <div class="widget-header  mr-3">
-              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-              <span class="badge badge-pill badge-danger notify">0</span>
-            </div>
-
-            <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width",intial-scale=1">
-    <title>RentalIT</title>
-    <link rel= "stylesheet" type="text/css" href="https://cdn,jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
-    <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/ui.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-  
-    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-  </head>
-
-  <body>
-    <header class="section-header">
-
-      <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
-      <div class="container">
-          <ul class="navbar-nav d-none d-md-flex mr-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
-          </ul>
-          <ul class="navbar-nav">
-          <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
-          
-        </ul> <!-- list-inline //  -->
+        <div style="padding-bottom: 18px;font-size : 24px;">Report An Issue</div>
+        <div style="padding-bottom: 18px;">Reported by<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_2" name="data_2" style="max-width : 450px;" class="form-control"/>
+        </div>
+        <div style="padding-bottom: 18px;">Severity<br/>
+        <select id="data_3" name="data_3" style="max-width : 300px;" class="form-control"><option>Critical</option>
+        <option>Major</option>
+        <option>Moderate</option>
+        <option>Minor</option>
+        <option>Cosmetic</option>
+        </select>
+        </div>
+        <div style="padding-bottom: 18px;">Priority<br/>
+        <select id="data_4" name="data_4" style="max-width : 300px;" class="form-control"><option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        </select>
+        </div>
+        <div style="padding-bottom: 18px;">Reproducibility<br/>
+        <select id="data_5" name="data_5" style="max-width : 300px;" class="form-control"><option>10%</option>
+        <option>25%</option>
+        <option>50%</option>
+        <option>75%</option>
+        <option>100%</option>
+        </select>
+        </div>
+        <div style="padding-bottom: 18px;">Summary<span style="color: red;"> *</span><br/>
+        <input type="text" id="data_6" name="data_6" style="max-width : 450px;" class="form-control"/>
+        </div>
+        <div style="padding-bottom: 18px;">Description<br/>
+        <textarea id="data_7" false name="data_7" style="max-width : 450px;" rows="6" class="form-control"></textarea>
+        </div>
+        <div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit"/></div>
+        <div>
+        <div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form to email</a></div>
+        <script src="https://www.100forms.com/js/FORMKEY:2XNKCQE24JXF/SEND:rajashawal246@gmail.com" type="text/javascript"></script>
+        </div>
+        </form>
         
-      </div> <!-- container //  -->
-      </nav> <!-- header-top-light.// -->
+        <script type="text/javascript">
+        function validateForm() {
+        if (isEmpty(document.getElementById('data_2').value.trim())) {
+        alert('Reported by is required!');
+        return false;
+        }
+        if (isEmpty(document.getElementById('data_6').value.trim())) {
+        alert('Summary is required!');
+        return false;
+        }
+        return true;
+        }
+        function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+        function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+        return isEmpty(email) || re.test(email);
+        }
+        </script>
       
-      <section class="header-main border-bottom">
-        <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-2 col-6">
-          <a href="#" class="brand-wrap">
-            RentalIT
-          </a> <!-- brand-wrap.// -->
-        </div>
-        <div class="col-lg-6 col-12 col-sm-12">
-        <form class="mt-10" type="get" action="{{ url('/search') }}">
-            <div class="input-group w-100">
-                <input type="search" id="default-search" class="form-control" name="query" placeholder="Search" required>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-              </div>
-          </form> <!-- search-wrap .end// -->
-        </div> <!-- col.// -->
-        <div class="col-lg-4 col-sm-6 col-12">
-          <div class="widgets-wrap float-md-right">
-            <div class="widget-header  mr-3">
-              <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-              <span class="badge badge-pill badge-danger notify">0</span>
-            </div>
 
-
-            </body>
-</html>
+      <p>This will take 3 working days to get respond from one of our admin</p>
+  
+      
+    </div>
+  </x-app-layout>

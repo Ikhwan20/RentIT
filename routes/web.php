@@ -7,6 +7,7 @@ use App\Http\Controllers\BotManController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/createorder', [OrderController::class, 'store']);
     Route::get('/orderlist', [OrderController::class, 'showorder'])->name('order.list');
  
+    Route::post('favorite-add/{id}', [WishlistController::class, 'favoriteAdd'])->name('favorite.add');
+    Route::delete('favorite-remove/{id}', [WishlistController::class, 'favoriteRemove'])->name('favorite.remove');
+    Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
 });
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
@@ -58,6 +62,7 @@ Route::match(['get','post'],'/botman',[BotManController::class,'index']);
 Route::get('/map', function() {
     return view('geolocate');
 });
+
 
 Route::get('/search', [UtilityController::class, 'search']);
 
@@ -78,7 +83,51 @@ Route::get('/renteefaq', function(){
     return view('FAQ/rentee');
 });
 
-Route::get('/renterfaq', function(){
+Route::get('/Aboutus', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/Career', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/rules', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/coverarea', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/contactus', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/orderstatus', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/shipping', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/opendispute', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/userlogin', function(){
+    return view('login');
+});
+
+Route::get('/userregister', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/account', function(){
+    return view('FAQ/renter');
+});
+
+Route::get('/myorders', function(){
     return view('FAQ/renter');
 });
 
