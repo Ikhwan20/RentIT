@@ -86,6 +86,13 @@ Route::get('/check', function(){
     return view('utilitiescheck');
 });
 
+Route::get('/check1', function(){
+    return view('utilitiescheck');
+});
 
 Route::post('/check', [ImageController::class, 'upload']);
 Route::get('/check', [ImageController::class, 'render']);
+
+Route::post('/check1', [ImageController::class, 'upload2']);
+Route::get('/check1', [ImageController::class, 'render2']);
+

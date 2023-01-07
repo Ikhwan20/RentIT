@@ -4,22 +4,43 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\images;
+
 class ImageController extends Controller
 {
-    public $tempvar;
-
     public function upload(Request $request) {
  
        $name = $request->file('image')->getClientOriginalName();
-       $request->file('image')->storeAs('public/images/profile/', $name);
-       $tempvar = $name;
+       $request->image->move(public_path('images'), $name);
+       $image = images::create([
+        'image_path' => $name
+      ]);
 
-       return $tempvar;
+      return redirect() -> back();
         
     }
 
-    public function render($value)
+    public function upload2(Request $request) {
+ 
+        $name2 = $request->file('image2')->getClientOriginalName();
+        $request->image2->move(public_path('images'), $name2);
+        $image2 = images::create([
+         'image_path2' => $name2
+       ]);
+ 
+       return redirect() -> back();
+         
+     }
+
+    public function render()
     {
-        return view('utilitiescheck', ['tempvar' => $value]);
+        $name = images::all('image_path');
+        return view('utilitiescheck', ['names' => $name]);
+    }
+
+    public function render2()
+    {
+        $name2 = images::all('image_path2');
+        return view('utilitiescheck', ['names2' => $name2]);
     }
 }
