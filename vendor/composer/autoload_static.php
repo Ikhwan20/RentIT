@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
+class ComposerStaticInit93190516b647a4bf3b519320339887b8
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -23,7 +23,6 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
-        '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
@@ -63,7 +62,6 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'S' => 
         array (
             'Symfony\\Polyfill\\Uuid\\' => 22,
-            'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -91,6 +89,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
             'Symfony\\Component\\Console\\' => 26,
             'Stripe\\' => 7,
             'Spatie\\Macroable\\' => 17,
+            'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
@@ -136,6 +135,8 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         array (
             'Mpociot\\Pipeline\\' => 17,
             'Monolog\\' => 8,
+            'Maize\\Markable\\Database\\Factories\\' => 34,
+            'Maize\\Markable\\' => 15,
         ),
         'L' => 
         array (
@@ -247,10 +248,6 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-uuid',
         ),
-        'Symfony\\Polyfill\\Php81\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
-        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -358,6 +355,10 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Spatie\\Macroable\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/macroable/src',
+        ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
@@ -479,6 +480,14 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Maize\\Markable\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maize-tech/laravel-markable/database/factories',
+        ),
+        'Maize\\Markable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maize-tech/laravel-markable/src',
         ),
         'Livewire\\' => 
         array (
@@ -707,6 +716,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'App\\Http\\Controllers\\StripeController' => __DIR__ . '/../..' . '/app/Http/Controllers/StripeController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\UtilityController' => __DIR__ . '/../..' . '/app/Http/Controllers/UtilityController.php',
+        'App\\Http\\Controllers\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/WishlistController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\ImageUpload' => __DIR__ . '/../..' . '/app/Http/Livewire/ImageUpload.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -936,6 +946,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Carbon\\FactoryImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/FactoryImmutable.php',
         'Carbon\\Language' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Language.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
+        'Carbon\\MessageFormatter\\MessageFormatterMapper' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/MessageFormatter/MessageFormatterMapper.php',
         'Carbon\\PHPStan\\AbstractMacro' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/AbstractMacro.php',
         'Carbon\\PHPStan\\Macro' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/Macro.php',
         'Carbon\\PHPStan\\MacroExtension' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/MacroExtension.php',
@@ -3976,6 +3987,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'League\\Flysystem\\UnixVisibility\\PortableVisibilityConverter' => __DIR__ . '/..' . '/league/flysystem/src/UnixVisibility/PortableVisibilityConverter.php',
         'League\\Flysystem\\UnixVisibility\\VisibilityConverter' => __DIR__ . '/..' . '/league/flysystem/src/UnixVisibility/VisibilityConverter.php',
         'League\\Flysystem\\UnreadableFileEncountered' => __DIR__ . '/..' . '/league/flysystem/src/UnreadableFileEncountered.php',
+        'League\\Flysystem\\UrlGeneration\\ChainedPublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/ChainedPublicUrlGenerator.php',
         'League\\Flysystem\\UrlGeneration\\PrefixPublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/PrefixPublicUrlGenerator.php',
         'League\\Flysystem\\UrlGeneration\\PublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/PublicUrlGenerator.php',
         'League\\Flysystem\\UrlGeneration\\ShardedPrefixPublicUrlGenerator' => __DIR__ . '/..' . '/league/flysystem/src/UrlGeneration/ShardedPrefixPublicUrlGenerator.php',
@@ -4103,6 +4115,20 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Livewire\\Wireable' => __DIR__ . '/..' . '/livewire/livewire/src/Wireable.php',
         'Livewire\\WithFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/WithFileUploads.php',
         'Livewire\\WithPagination' => __DIR__ . '/..' . '/livewire/livewire/src/WithPagination.php',
+        'Maize\\Markable\\Database\\Factories\\ArticleFactory' => __DIR__ . '/..' . '/maize-tech/laravel-markable/database/factories/ArticleFactory.php',
+        'Maize\\Markable\\Database\\Factories\\PostFactory' => __DIR__ . '/..' . '/maize-tech/laravel-markable/database/factories/PostFactory.php',
+        'Maize\\Markable\\Database\\Factories\\UserFactory' => __DIR__ . '/..' . '/maize-tech/laravel-markable/database/factories/UserFactory.php',
+        'Maize\\Markable\\Exceptions\\InvalidMarkInstanceException' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Exceptions/InvalidMarkInstanceException.php',
+        'Maize\\Markable\\Exceptions\\InvalidMarkValueException' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Exceptions/InvalidMarkValueException.php',
+        'Maize\\Markable\\Exceptions\\InvalidMarkableInstanceException' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Exceptions/InvalidMarkableInstanceException.php',
+        'Maize\\Markable\\Mark' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Mark.php',
+        'Maize\\Markable\\Markable' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Markable.php',
+        'Maize\\Markable\\MarkableServiceProvider' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/MarkableServiceProvider.php',
+        'Maize\\Markable\\Models\\Bookmark' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Models/Bookmark.php',
+        'Maize\\Markable\\Models\\Favorite' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Models/Favorite.php',
+        'Maize\\Markable\\Models\\Like' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Models/Like.php',
+        'Maize\\Markable\\Models\\Reaction' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Models/Reaction.php',
+        'Maize\\Markable\\Scopes\\MarkableScope' => __DIR__ . '/..' . '/maize-tech/laravel-markable/src/Scopes/MarkableScope.php',
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
@@ -5362,13 +5388,13 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Ramsey\\Collection\\CollectionInterface' => __DIR__ . '/..' . '/ramsey/collection/src/CollectionInterface.php',
         'Ramsey\\Collection\\DoubleEndedQueue' => __DIR__ . '/..' . '/ramsey/collection/src/DoubleEndedQueue.php',
         'Ramsey\\Collection\\DoubleEndedQueueInterface' => __DIR__ . '/..' . '/ramsey/collection/src/DoubleEndedQueueInterface.php',
+        'Ramsey\\Collection\\Exception\\CollectionException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/CollectionException.php',
         'Ramsey\\Collection\\Exception\\CollectionMismatchException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/CollectionMismatchException.php',
         'Ramsey\\Collection\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/InvalidArgumentException.php',
-        'Ramsey\\Collection\\Exception\\InvalidSortOrderException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/InvalidSortOrderException.php',
+        'Ramsey\\Collection\\Exception\\InvalidPropertyOrMethod' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/InvalidPropertyOrMethod.php',
         'Ramsey\\Collection\\Exception\\NoSuchElementException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/NoSuchElementException.php',
         'Ramsey\\Collection\\Exception\\OutOfBoundsException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/OutOfBoundsException.php',
         'Ramsey\\Collection\\Exception\\UnsupportedOperationException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/UnsupportedOperationException.php',
-        'Ramsey\\Collection\\Exception\\ValueExtractionException' => __DIR__ . '/..' . '/ramsey/collection/src/Exception/ValueExtractionException.php',
         'Ramsey\\Collection\\GenericArray' => __DIR__ . '/..' . '/ramsey/collection/src/GenericArray.php',
         'Ramsey\\Collection\\Map\\AbstractMap' => __DIR__ . '/..' . '/ramsey/collection/src/Map/AbstractMap.php',
         'Ramsey\\Collection\\Map\\AbstractTypedMap' => __DIR__ . '/..' . '/ramsey/collection/src/Map/AbstractTypedMap.php',
@@ -5380,6 +5406,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Ramsey\\Collection\\Queue' => __DIR__ . '/..' . '/ramsey/collection/src/Queue.php',
         'Ramsey\\Collection\\QueueInterface' => __DIR__ . '/..' . '/ramsey/collection/src/QueueInterface.php',
         'Ramsey\\Collection\\Set' => __DIR__ . '/..' . '/ramsey/collection/src/Set.php',
+        'Ramsey\\Collection\\Sort' => __DIR__ . '/..' . '/ramsey/collection/src/Sort.php',
         'Ramsey\\Collection\\Tool\\TypeTrait' => __DIR__ . '/..' . '/ramsey/collection/src/Tool/TypeTrait.php',
         'Ramsey\\Collection\\Tool\\ValueExtractorTrait' => __DIR__ . '/..' . '/ramsey/collection/src/Tool/ValueExtractorTrait.php',
         'Ramsey\\Collection\\Tool\\ValueToStringTrait' => __DIR__ . '/..' . '/ramsey/collection/src/Tool/ValueToStringTrait.php',
@@ -5578,7 +5605,6 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'React\\Stream\\Util' => __DIR__ . '/..' . '/react/stream/src/Util.php',
         'React\\Stream\\WritableResourceStream' => __DIR__ . '/..' . '/react/stream/src/WritableResourceStream.php',
         'React\\Stream\\WritableStreamInterface' => __DIR__ . '/..' . '/react/stream/src/WritableStreamInterface.php',
-        'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',
@@ -5925,6 +5951,10 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Spatie\\LaravelIgnition\\Support\\StringComparator' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/StringComparator.php',
         'Spatie\\LaravelIgnition\\Views\\BladeSourceMapCompiler' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/BladeSourceMapCompiler.php',
         'Spatie\\LaravelIgnition\\Views\\ViewExceptionMapper' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/ViewExceptionMapper.php',
+        'Spatie\\LaravelPackageTools\\Commands\\InstallCommand' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Commands/InstallCommand.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Spatie\\Macroable\\Macroable' => __DIR__ . '/..' . '/spatie/macroable/src/Macroable.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Stripe\\Account' => __DIR__ . '/..' . '/stripe/stripe-php/lib/Account.php',
@@ -7094,7 +7124,6 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Symfony\\Polyfill\\Php72\\Php72' => __DIR__ . '/..' . '/symfony/polyfill-php72/Php72.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
         'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
-        'Symfony\\Polyfill\\Php81\\Php81' => __DIR__ . '/..' . '/symfony/polyfill-php81/Php81.php',
         'Symfony\\Polyfill\\Uuid\\Uuid' => __DIR__ . '/..' . '/symfony/polyfill-uuid/Uuid.php',
         'Termwind\\Actions\\StyleToMethod' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Actions/StyleToMethod.php',
         'Termwind\\Components\\Anchor' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Components/Anchor.php',
@@ -7205,10 +7234,10 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit93190516b647a4bf3b519320339887b8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit93190516b647a4bf3b519320339887b8::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit93190516b647a4bf3b519320339887b8::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit93190516b647a4bf3b519320339887b8::$classMap;
 
         }, null, ClassLoader::class);
     }

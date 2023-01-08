@@ -53,6 +53,16 @@ Route::middleware('auth')->group(function () {
     Route::post('favorite-add/{id}', [WishlistController::class, 'favoriteAdd'])->name('favorite.add');
     Route::delete('favorite-remove/{id}', [WishlistController::class, 'favoriteRemove'])->name('favorite.remove');
     Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
+
+    Route::post('/check', [ImageController::class, 'upload']);
+    Route::get('/check', [ImageController::class, 'render']);
+
+    Route::post('/check1', [ImageController::class, 'upload2']);
+    Route::get('/check1', [ImageController::class, 'render2']);
+
+    Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
+
+    Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');
 });
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
@@ -65,11 +75,6 @@ Route::get('/map', function() {
 
 
 Route::get('/search', [UtilityController::class, 'search']);
-
-
-Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
-
-Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');
 
 Route::get('/paymentfaq', function(){
     return view('FAQ/payment');
@@ -139,9 +144,5 @@ Route::get('/check1', function(){
     return view('utilitiescheck');
 });
 
-Route::post('/check', [ImageController::class, 'upload']);
-Route::get('/check', [ImageController::class, 'render']);
 
-Route::post('/check1', [ImageController::class, 'upload2']);
-Route::get('/check1', [ImageController::class, 'render2']);
 
