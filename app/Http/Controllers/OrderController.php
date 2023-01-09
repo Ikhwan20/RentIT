@@ -28,9 +28,27 @@ class OrderController extends Controller
         return view('stripe', ['order'=> $order, 'utility' => $UtilityData]);
     }
 
-    public function showorder(){
+    public function showactiveorder(){
         $id = Auth::id();
-        $order = Order::where('renter', $id)->get();
-        return view('utility/order', ['orders'=> $order]);
+        $order = Order::where('renter', $id)->where('active', true)->get();
+        $utility = '{{ $order->utility }}';
+        $UtilityData = Utility::where('id', $utility)->get();
+        return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
+    }
+
+    public function showupcomingorder(){
+        $id = Auth::id();
+        $order = Order::where('renter', $id)->where('active', false)->where('ended', false)->get();
+        $utility = Order::where('renter', $id)->where('active', false)->where('ended', false)->get('utility');
+        $UtilityData = Utility::where('id', $utility)->get();
+        return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
+    }
+
+    public function showendedorder(){
+        $id = Auth::id();
+        $order = Order::where('renter', $id)->where('ended', true)->get();
+        $utility = $order->utility;
+        $UtilityData = Utility::where('id', $utility)->get();
+        return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
     }
 }

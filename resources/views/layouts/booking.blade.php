@@ -39,8 +39,8 @@
 <div class="container">
     <ul class="navbar-nav d-none d-md-flex mr-auto">
     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="/utility">Rent your utility</a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ route('booking.dash') }}">Booking</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Rent your utility</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Booking</a></li>
     </ul>
     <ul class="navbar-nav">
     <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
@@ -52,7 +52,7 @@
 
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            @livewire('bookingnavigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))

@@ -33,6 +33,9 @@ Route::middleware([
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/booking', function () {
+        return view('bookingdash');
+    })->name('booking.dash');
      //route for utility
     Route::get('/utilityadmin', [UtilityController::class, 'utilityList'])->name('utilityadmin');
     Route::resource('/utility', UtilityController::class);
@@ -48,7 +51,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admindash', [UserController::class, 'admin'])->name('admindash');
 
     Route::post('/createorder', [OrderController::class, 'store']);
-    Route::get('/orderlist', [OrderController::class, 'showorder'])->name('order.list');
+    Route::get('/active', [OrderController::class, 'showactiveorder'])->name('order.active');
+    Route::get('/upcoming', [OrderController::class, 'showupcomingorder'])->name('order.upcoming');
+    Route::get('/ended', [OrderController::class, 'showendedorder'])->name('order.ended');
  
     Route::post('favorite-add/{id}', [WishlistController::class, 'favoriteAdd'])->name('favorite.add');
     Route::delete('favorite-remove/{id}', [WishlistController::class, 'favoriteRemove'])->name('favorite.remove');

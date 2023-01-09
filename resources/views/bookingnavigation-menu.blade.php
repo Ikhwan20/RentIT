@@ -12,7 +12,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-
+                    <x-jet-nav-link href="{{ url('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Active') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="/utility" :active="request()->routeIs('/utility')">
+                        {{ __('Upcoming') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="/orderlist" :active="request()->routeIs('/orderlist')">
+                        {{ __('Ended') }}
+                    </x-jet-nav-link>
                 </div>
 
                 <!--Chat-->
@@ -21,6 +29,7 @@
 
             
         </div>
+        
 
                 <!-- Settings Dropdown -->
                 <div class="mt-2 ml-3 relative">
