@@ -84,7 +84,7 @@ Route::get('/renteefaq', function(){
 });
 
 Route::get('/Aboutus', function(){
-    return view('FAQ/renter');
+    return view('FAQ/Aboutus');
 });
 
 Route::get('/Career', function(){
@@ -107,19 +107,9 @@ Route::get('/orderstatus', function(){
     return view('FAQ/renter');
 });
 
-Route::get('/shipping', function(){
-    return view('FAQ/renter');
-});
+
 
 Route::get('/opendispute', function(){
-    return view('FAQ/renter');
-});
-
-Route::get('/userlogin', function(){
-    return view('login');
-});
-
-Route::get('/userregister', function(){
     return view('FAQ/renter');
 });
 
@@ -127,9 +117,7 @@ Route::get('/account', function(){
     return view('FAQ/renter');
 });
 
-Route::get('/myorders', function(){
-    return view('FAQ/renter');
-});
+
 
 Route::get('/check', function(){
     return view('utilitiescheck');

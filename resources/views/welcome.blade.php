@@ -394,7 +394,6 @@
               <aside class="col-md col-6">
                 <h6 class="title">FAQ</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="/paymentfaq">How to be renter?</a></li>
                   <li> <a href="/renteefaq">How to be rentee?</a></li>
                   <li> <a href="/refundfaq">Refund policy</a></li>
                   <li> <a href="/paymentfaq">Payment term</a></li>
@@ -414,17 +413,13 @@
                 <ul class="list-unstyled">
                   <li> <a href="contactus">Contact us</a></li>
                   <li> <a href="orderstatus">Order status</a></li>
-                  <li> <a href="shipping">Shipping info</a></li>
                   <li> <a href="opendispute">Open dispute</a></li>
                 </ul>
               </aside>
               <aside class="col-md col-6">
                 <h6 class="title">Account</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="userlogin"> User Login </a></li>
-                  <li> <a href="userregister"> User register </a></li>
                   <li> <a href="account"> Account Setting </a></li>
-                  <li> <a href="myorders"> My Orders </a></li>
                 </ul>
               </aside>
               
