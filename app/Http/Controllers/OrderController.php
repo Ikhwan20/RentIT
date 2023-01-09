@@ -25,7 +25,7 @@ class OrderController extends Controller
         }
 
         $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'start'=>$start, 'end'=>$end, 'duration'=>$duration, 'totalPrice'=>$totalPrice]);
-        return view('stripe', ['order'=> $order]);
+        return view('stripe', ['order'=> $order, 'utility' => $UtilityData]);
     }
 
     public function showorder(){

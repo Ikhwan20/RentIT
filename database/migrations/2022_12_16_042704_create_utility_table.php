@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('photo');
             $table->string('category');
             $table->string('description');
+            $table->string('location');
             $table->foreignId('owner')->nullable()->references('id')->on('users');
             $table->boolean('isRent')->default(false);
             $table->foreignId('renter')->nullable()->references('id')->on('users');

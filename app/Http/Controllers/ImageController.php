@@ -34,13 +34,13 @@ class ImageController extends Controller
 
     public function render()
     {
-        $name = images::all('image_path');
+        $name = images::all();
         return view('utilitiescheck', ['names' => $name]);
     }
 
     public function render2()
     {
-        $name2 = images::all('image_path2');
+        $name2 = images::all();
         return view('utilitiescheck', ['names2' => $name2]);
     }
 }

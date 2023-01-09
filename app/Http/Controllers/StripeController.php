@@ -52,8 +52,7 @@ class StripeController extends Controller
                 ]);
                  
                 if($charge['status'] == 'succeeded') {
-                    dd($charge);
-                    return redirect()->route('addmoney.paymentstripe');
+                    return redirect()->route('welcome');
                 } else {
                     return redirect()->route('addmoney.paymentstripe')->with('error','Money not add in wallet!');
                 }

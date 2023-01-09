@@ -47,6 +47,9 @@
     <script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/bootstrap.css'])
+    @vite(['resources/css/ui.css'])
+    @vite(['resources/css/responsive.css'])
 
 </head>
 
@@ -69,7 +72,7 @@
       <div class="row align-items-center">
         <div class="col-lg-2 col-6">
           <a href="#" class="brand-wrap">
-            RentalIT
+            <img src="assets/images/1a.jpg" class="img-fluid rounded">
           </a> <!-- brand-wrap.// -->
         </div>
         <div class="col-lg-6 col-12 col-sm-12">
@@ -140,10 +143,10 @@
                                 <a class="transition hover:text-gray-900" href="/c/pantry">Utility</a>
                             </span>
                             <span class="block mx-2">›</span>
-                            <a class="transition hover:text-gray-900" href="/c/nuts">{{ $util->category }}</a>
+                            <a class="transition hover:text-gray-900" href="/c/{{ $util->category }}">{{ $util->category }}</a>
                         </nav>
                         <h1 class="text-3xl lg:text-5xl leading-snug" itemprop="name">
-                            <a href="/brand/dizzie">{{ $util->brand }}</a>
+                            <a href="/brand/{{ $util->brand }}">{{ $util->brand }}</a>
                             <br>
                             <span class="font-body font-normal">{{ $util->name }}</span>
                         </h1>
@@ -214,13 +217,13 @@
                                 </button>
                             </form>
                                 
-                                <form action="{{ route('favorite.add', $util->id) }}" method="POST"
-                                    enctype="multipart/form-data">
-                                    @csrf
-                                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
-                                        Add to wishlist
-                                    </button>
-                                </form>
+                            <form class="mt-3" action="{{ route('favorite.add', $util->id) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
+                                    Add to wishlist
+                                </button>
+                            </form>
 
                                 
                             </div>
