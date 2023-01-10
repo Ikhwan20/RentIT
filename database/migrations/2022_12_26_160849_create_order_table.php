@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('end');
             $table->integer('duration');
             $table->double('totalPrice');
+            $table->boolean('active')->default(false);
+            $table->boolean('ended')->default(false);
         });
     }
 

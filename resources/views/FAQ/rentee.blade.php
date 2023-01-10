@@ -1,28 +1,30 @@
 <x-app-layout>
     <div>
-      <h1 style="text-align:center";><b>Payment Term</b></h1>
+    <style>
+      h3,p,h2{
+        padding-left:5%;
+      }
+      form
+      {
+        text-align: center;
+      }
+      </style>
+      <h1 style="text-align:center";><b>How to be a Rentee?</b></h1>
       <br>
-      <h2>What payment method are we accepted? </h2>
+      <h2>Become a Rentee? </h2>
+      <p>Our startup company always welcome new people to be part of our small family. Our goal is to help as many as possible people who want to have passive side income</p>
+      <p>To become a rentee is so easy with us .Just follow a few step then you ready to go. After you become a rentee, you can rent out your item through our website.</p>
+  <br>
+      <h3>Steps to become Rentee</h3>
+      <ol>
+      	<li>Register to our website</li>
+  	   	<li>Go to rentee page <i>(at the top left homepage)</i></li>
+      	<li>Sign up your account as one of the rentee and wait a few minute to get verification from one of our teams</li>              			<li>After being verify, you ready to go!</li>
+      </ol>
   
-      <h4>Accpeted payment method are :</h4>
-      <ul>
-          <li>Debit attaching to bank accounts</li>
-          <li>Credit Card as long they are not pre-paid</li>
-          <li>Visa, Mastercard and American Express are accepted</li>
-          <li>Any payment type that already been agreed by both party (renter and rentee)</li>
-      </ul>
-  
-      <h4>Payment method that are not accepted :</h4>
-      <ul>
-          <li>Gift Card</li>
-          <li>Paypal</li>
-          <li>Pre-paid or reloadble credit/debit card</li>
-      </ul>
-  
+      
       <h2 style="text-align:center";>New Features!</h2>
-      <h3>We introduce you our new E-Wallet</h3>
-      <p>To improve our payment term, we introduced you our new features called <b>WalletIT</b> as a new payment method in our website. This <b>WalletIT</b> can be use by both
-          renter and rentee. This <b>WalletIT</b> can be top up and be use as digital wallet for user to rent out any utilities in our website. Rent easy with us!.
-      </p>
+      <h3>We introduce you our new RentIT influencer!</h3>
+      <p>Become part of our new future plan. </p>
     </div>
   </x-app-layout>

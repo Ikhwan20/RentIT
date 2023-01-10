@@ -26,7 +26,8 @@
       <div class="container">
           <ul class="navbar-nav d-none d-md-flex mr-auto">
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
+          <li class="nav-item"><a class="nav-link" href="/utility">Rent your utility</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('booking.dash') }}">Booking</a></li>
           </ul>
           <ul class="navbar-nav">
           <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
@@ -36,16 +37,17 @@
       </div> <!-- container //  -->
       </nav> <!-- header-top-light.// -->
       
+      <nav class="bg-white border-b border-gray-100">
       <section class="header-main border-bottom">
         <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-2 col-6">
           <a href="#" class="brand-wrap">
-            RentalIT
+          <img src="assets/images/1a.jpg" class="img-fluid rounded">
           </a> <!-- brand-wrap.// -->
         </div>
-        <div class="col-lg-6 col-12 col-sm-12">
-        <form class="mt-10" type="get" action="{{ url('/search') }}">
+        <div class="col-lg-6 col-10 col-sm-12">
+        <form class="mt-10 ml-5" type="get" action="{{ url('/search') }}">
             <div class="input-group w-100">
                 <input type="search" id="default-search" class="form-control" name="query" placeholder="Search" required>
                 <div class="input-group-append">
@@ -68,44 +70,36 @@
                 <div class="hidden fixed top-0 right-0 px-6 py-1">
                     @auth
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
-                    <x-jet-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                    <a href="{{ route('profile.show') }}" class="">
-                    @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                      <img class="icon icon-sm rounded-circle border" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                    @else
-                      {{ Auth::user()->name }}
-                    @endif</a></x-slot>
-                  <x-slot name="content">
-                        <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Manage Account') }}
-                        </div>
-
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
-                        </x-jet-dropdown-link>
-
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                {{ __('API Tokens') }}
-                            </x-jet-dropdown-link>
-                        @endif
-
-                        <div class="border-t border-gray-100"></div>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}" x-data>
+                      <x-jet-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                          <a href="{{ route('profile.show') }}" class="">
+                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            <img class="icon icon-sm rounded-circle border" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            @else
+                            {{ Auth::user()->name }}
+                            @endif
+                          </a>
+                        </x-slot>
+                        <x-slot name="content">
+                          <!-- Account Management -->
+                          <div class="block px-4 py-2 text-xs text-gray-400">
+                              {{ __('Manage Account') }}
+                          </div>
+                          <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                              {{ __('Profile') }}
+                          </x-jet-dropdown-link>
+                          <div class="border-t border-gray-100"></div>
+                          <!-- Authentication -->
+                          <form method="POST" action="{{ route('logout') }}" x-data>
                             @csrf
-
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                       @click.prevent="$root.submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
-                        </form>
-                  </x-slot>
-                  </x-jet-dropdown>
-                  </div>
+                          </form>
+                        </x-slot>
+                      </x-jet-dropdown>
+                    </div>
                     @else
                     <span class="text">Welcome!</span><br>
                         <a href="{{ route('login') }}" class="text-sm text-black dark:text-gray-500 underline">Log in</a>
@@ -123,6 +117,7 @@
       </div> <!-- row.// -->
         </div> <!-- container.// -->
       </section> <!-- header-main .// -->
+      </nav>
       
       
       
@@ -247,7 +242,7 @@
               <a href="#" class="title">Electric Kettle</a>
               
               
-              <div class="price mt-1">RM2.50/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM2.50</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -258,7 +253,7 @@
               <a href="#" class="title">Table Fans</a>
               
               
-              <div class="price mt-1">RM5.00/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM5.00</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -269,7 +264,7 @@
               <a href="#" class="title">Football Boots</a>
               
               
-              <div class="price mt-1">RM6.00/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM6.00</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -280,7 +275,7 @@
               <a href="#" class="title">Mug</a>
               
               
-              <div class="price mt-1">RM0.50/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM0.50</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -309,7 +304,7 @@
               <a href="{{ url('/utilitydesc'.$util->id) }}" class="title">{{ $util->name }}</a>
               
               
-              <div class="price mt-1">RM {{ $util->prices }}/hour</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM {{ $util->prices }}</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -337,7 +332,7 @@
             <a href="#" class="img-wrap"> <img src="assets/images/items/10.jpg"> </a>
             <figcaption class="info-wrap">
               <a href="#" class="title">Sport Shoes</a>
-              <div class="price mt-1">RM3.00/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM3.00</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -346,7 +341,7 @@
             <a href="#" class="img-wrap"> <img src="assets/images/items/11.jpg"> </a>
             <figcaption class="info-wrap">
               <a href="#" class="title">Hanger</a>
-              <div class="price mt-1">RM0.20/day per 1 item</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM0.20/item</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -355,7 +350,7 @@
             <a href="#" class="img-wrap"> <img src="assets/images/items/12.jpg"> </a>
             <figcaption class="info-wrap">
               <a href="#" class="title">Electric Pot</a>
-              <div class="price mt-1">RM5.00/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM5.00</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -364,7 +359,7 @@
             <a href="#" class="img-wrap"> <img src="assets/images/items/13.jpg"> </a>
             <figcaption class="info-wrap">
               <a href="#" class="title">Electric Shaver</a>
-              <div class="price mt-1">RM3.00/day</div> <!-- price-wrap.// -->
+              <div class="price mt-1">RM3.00</div> <!-- price-wrap.// -->
             </figcaption>
           </div>
         </div> <!-- col.// -->
@@ -394,7 +389,6 @@
               <aside class="col-md col-6">
                 <h6 class="title">FAQ</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="/paymentfaq">How to be renter?</a></li>
                   <li> <a href="/renteefaq">How to be rentee?</a></li>
                   <li> <a href="/refundfaq">Refund policy</a></li>
                   <li> <a href="/paymentfaq">Payment term</a></li>
@@ -414,17 +408,13 @@
                 <ul class="list-unstyled">
                   <li> <a href="contactus">Contact us</a></li>
                   <li> <a href="orderstatus">Order status</a></li>
-                  <li> <a href="shipping">Shipping info</a></li>
                   <li> <a href="opendispute">Open dispute</a></li>
                 </ul>
               </aside>
               <aside class="col-md col-6">
                 <h6 class="title">Account</h6>
                 <ul class="list-unstyled">
-                  <li> <a href="userlogin"> User Login </a></li>
-                  <li> <a href="userregister"> User register </a></li>
                   <li> <a href="account"> Account Setting </a></li>
-                  <li> <a href="myorders"> My Orders </a></li>
                 </ul>
               </aside>
               

@@ -33,6 +33,9 @@ Route::middleware([
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/booking', function () {
+        return view('bookingdash');
+    })->name('booking.dash');
      //route for utility
     Route::get('/utilityadmin', [UtilityController::class, 'utilityList'])->name('utilityadmin');
     Route::resource('/utility', UtilityController::class);
@@ -48,11 +51,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/admindash', [UserController::class, 'admin'])->name('admindash');
 
     Route::post('/createorder', [OrderController::class, 'store']);
-    Route::get('/orderlist', [OrderController::class, 'showorder'])->name('order.list');
+    Route::get('/active', [OrderController::class, 'showactiveorder'])->name('order.active');
+    Route::get('/upcoming', [OrderController::class, 'showupcomingorder'])->name('order.upcoming');
+    Route::get('/ended', [OrderController::class, 'showendedorder'])->name('order.ended');
  
     Route::post('favorite-add/{id}', [WishlistController::class, 'favoriteAdd'])->name('favorite.add');
     Route::delete('favorite-remove/{id}', [WishlistController::class, 'favoriteRemove'])->name('favorite.remove');
     Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
+
+    Route::post('/check', [ImageController::class, 'upload']);
+    Route::get('/check', [ImageController::class, 'render']);
+
+    Route::post('/check1', [ImageController::class, 'upload2']);
+    Route::get('/check1', [ImageController::class, 'render2']);
+
+    Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
+
+    Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');
 });
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
@@ -65,11 +80,6 @@ Route::get('/map', function() {
 
 
 Route::get('/search', [UtilityController::class, 'search']);
-
-
-Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
-
-Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');
 
 Route::get('/paymentfaq', function(){
     return view('FAQ/payment');
@@ -84,7 +94,7 @@ Route::get('/renteefaq', function(){
 });
 
 Route::get('/Aboutus', function(){
-    return view('FAQ/renter');
+    return view('FAQ/Aboutus');
 });
 
 Route::get('/Career', function(){
@@ -107,19 +117,9 @@ Route::get('/orderstatus', function(){
     return view('FAQ/renter');
 });
 
-Route::get('/shipping', function(){
-    return view('FAQ/renter');
-});
+
 
 Route::get('/opendispute', function(){
-    return view('FAQ/renter');
-});
-
-Route::get('/userlogin', function(){
-    return view('login');
-});
-
-Route::get('/userregister', function(){
     return view('FAQ/renter');
 });
 
@@ -127,9 +127,7 @@ Route::get('/account', function(){
     return view('FAQ/renter');
 });
 
-Route::get('/myorders', function(){
-    return view('FAQ/renter');
-});
+
 
 Route::get('/check', function(){
     return view('utilitiescheck');
@@ -139,9 +137,5 @@ Route::get('/check1', function(){
     return view('utilitiescheck');
 });
 
-Route::post('/check', [ImageController::class, 'upload']);
-Route::get('/check', [ImageController::class, 'render']);
 
-Route::post('/check1', [ImageController::class, 'upload2']);
-Route::get('/check1', [ImageController::class, 'render2']);
 

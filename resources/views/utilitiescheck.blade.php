@@ -15,7 +15,6 @@
   <div>
       <form action="/check" method="post" enctype="multipart/form-data">
       @csrf
-      {{-- The best athlete wants his opponent at his best. --}}
       <input type="file" id="my-file" name="image">
       <br>
       <input type="submit" name="upload">Upload</input>

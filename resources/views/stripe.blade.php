@@ -1,5 +1,6 @@
 <x-app-layout>
-<div class='col-md-12 mt-10 w-1/2'>
+<div class = "flex space-x-10">
+<div class='col-md-4 ml-40 mt-10 w-1/4'>
         <div class="card">
             <div class="card-header">
                 Checkout Page
@@ -41,10 +42,8 @@
                             <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='hidden' name="amount" value="300">
                         </div>
                     </div>
-                    <div class="mb-3" style="padding-top:20px;">
-                        <span itemprop="price">Total: RM {{ $order->totalPrice }}</span>
-                    </div>
-                    <div class="mb-3">
+
+                    <div class="mb-3 mt-3">
                         <button class='form-control btn btn-success submit-button' type='submit'>Pay »</button>
                     </div>
                         
@@ -57,4 +56,20 @@
             </div>
         </div>
     </div>
+    <div class='col-md-4 ml-10 mt-10 w-1/4 '>
+        <div class="card items-center">
+            <div class="card-header">
+                Utility Details
+            </div>
+            @foreach($utility as $util)
+            <div class="card-body">
+                <p class="text-3xl font-bold pl-10">{{ $util->name }}</p>
+                <img src="{{ asset($util->photo) }}"></br>
+                <p class="text-xl pl-10">Duration : {{ $order->duration }} hours</p>
+                <span class="text-xl pl-10" itemprop="price">Total: RM {{ $order->totalPrice }}</span>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 </x-app-layout>

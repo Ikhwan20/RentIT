@@ -4,6 +4,10 @@
       h2{
         padding-left:5%;
       }
+      form
+      {
+        text-align: center;
+      }
       </style>
   </div>
     <div>
@@ -23,15 +27,15 @@
 
       <h3>Guide To Return and Refund :</h3>
       <ol>
-          <li>Go to refund policy page</li>
-          <br>
-          <li>Snap pictures of the defective utilities</li>
-          <br>
-          <li>Fill out the form</li>
-          <br>
-          <li>Describe the problem in the form box</li>
-          <br>
-          <li>Submit the form</li>
+        <li><i>Go to refund policy page</i></li>
+        <br>
+        <li><i>Snap pictures of the defective utilities</i></li>
+        <br>
+        <li><i>Fill out the form</i></li>
+        <br>
+        <li><i>Describe the problem in the form box</i></li>
+        <br>
+        <li><i>Submit the form</i></li>
       </ol>
     <br><br>
     <form method="post" action="//submit.form" onSubmit="return validateForm();" styl="text-align:center;">

@@ -1,35 +1,43 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+    <div class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="/" class="text-xl">
-                        RentIT
-                    </a>
+                <div class="shrink-0 col-lg-2 col-3 mt-2">
+                    <a href="/" class="brand-wrap"> 
+                        <img src="assets/images/1a.jpg" class="img-fluid rounded">
+                    </a> <!-- brand-wrap.// -->
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('admindash') }}" :active="request()->routeIs('admindash')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{ url('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Active') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('utilityadmin') }}" :active="request()->routeIs('utilityadmin')">
-                        {{ __('Utility') }}
+                    <x-jet-nav-link href="/utility" :active="request()->routeIs('/utility')">
+                        {{ __('Upcoming') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
-                        {{ __('Users') }}
+                    <x-jet-nav-link href="/orderlist" :active="request()->routeIs('/orderlist')">
+                        {{ __('Ended') }}
                     </x-jet-nav-link>
                 </div>
-            </div>
 
-            <div class="mt-2 ml-3 relative">
+                <!--Chat-->
+                <!-- Teams Dropdown -->
+                
+
+            
+        </div>
+        
+
+                <!-- Settings Dropdown -->
+                <div class="mt-2 ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-15 w-15 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                    <img class="h-11 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">

@@ -1,7 +1,7 @@
-<x-app-layout>
+<x-booking-layout>
 
 <div class="pt-6 px-4 text-xl font-bold">
-    Rental Lists
+    Active
 </div>
 
 <br/>
@@ -15,14 +15,16 @@
                 </thead>
                 <tbody class="text-l ml-3 text-center">
                 @foreach($orders as $order)
+                @foreach($utility as $util)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $order->utility }}</td>
+                        <td>{{ $util->name }}</td>
                         <td>{{ $order->start }}</td>
                         <td>{{ $order->end }}</td>
                     </tr>
                 @endforeach
+                @endforeach
                 </tbody>
             </table>
 
-</x-app-layout>
+</x-booking-layout>
