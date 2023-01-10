@@ -14,24 +14,22 @@ class OrderController extends Controller
     {
         $utility = $request->input('utility');
         $renter = Auth::id();
-        $start = $request->input('start');
-        $end = $request->input('end');
-        $duration = $end - $start;
+        $datetime = $request->input('datetime');
         
         $UtilityData = Utility::where('id', $utility)->get();
         
         foreach($UtilityData as $util){
-            $totalPrice = $util->prices * $duration;
+            $totalPrice = 10;
         }
 
-        $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'start'=>$start, 'end'=>$end, 'duration'=>$duration, 'totalPrice'=>$totalPrice]);
+        $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'datetime'=>$datetime, 'totalPrice'=>$totalPrice]);
         return view('stripe', ['order'=> $order, 'utility' => $UtilityData]);
     }
 
     public function showactiveorder(){
         $id = Auth::id();
         $order = Order::where('renter', $id)->where('active', true)->get();
-        $utility = '{{ $order->utility }}';
+        $utility = $order[0]->utility ;
         $UtilityData = Utility::where('id', $utility)->get();
         return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
     }
@@ -39,7 +37,7 @@ class OrderController extends Controller
     public function showupcomingorder(){
         $id = Auth::id();
         $order = Order::where('renter', $id)->where('active', false)->where('ended', false)->get();
-        $utility = Order::where('renter', $id)->where('active', false)->where('ended', false)->get('utility');
+        $utility = $order[0]->utility ;
         $UtilityData = Utility::where('id', $utility)->get();
         return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
     }
@@ -47,7 +45,7 @@ class OrderController extends Controller
     public function showendedorder(){
         $id = Auth::id();
         $order = Order::where('renter', $id)->where('ended', true)->get();
-        $utility = $order->utility;
+        $utility = $order[0]->utility;
         $UtilityData = Utility::where('id', $utility)->get();
         return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
     }
