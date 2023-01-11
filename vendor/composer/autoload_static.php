@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e
+class ComposerStaticInit35cd84d53cb3ed3b3328efb4d78376a2
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -430,8 +430,8 @@ class ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -718,7 +718,9 @@ class ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e
         'App\\Http\\Controllers\\UtilityController' => __DIR__ . '/../..' . '/app/Http/Controllers/UtilityController.php',
         'App\\Http\\Controllers\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/WishlistController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Livewire\\BookingnavigationMenu' => __DIR__ . '/../..' . '/app/Http/Livewire/BookingnavigationMenu.php',
         'App\\Http\\Livewire\\ImageUpload' => __DIR__ . '/../..' . '/app/Http/Livewire/ImageUpload.php',
+        'App\\Http\\Livewire\\RentnavigationMenu' => __DIR__ . '/../..' . '/app/Http/Livewire/RentnavigationMenu.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -745,6 +747,7 @@ class ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\View\\Components\\AdminLayout' => __DIR__ . '/../..' . '/app/View/Components/AdminLayout.php',
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
+        'App\\View\\Components\\BookingLayout' => __DIR__ . '/../..' . '/app/View/Components/BookingLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'BaconQrCode\\Common\\BitArray' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Common/BitArray.php',
@@ -7220,10 +7223,10 @@ class ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit35cd84d53cb3ed3b3328efb4d78376a2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit35cd84d53cb3ed3b3328efb4d78376a2::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit35cd84d53cb3ed3b3328efb4d78376a2::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit35cd84d53cb3ed3b3328efb4d78376a2::$classMap;
 
         }, null, ClassLoader::class);
     }
