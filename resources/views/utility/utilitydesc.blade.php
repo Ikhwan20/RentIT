@@ -14,6 +14,11 @@
     async
     ></script>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <script>
     document.addEventListener("turbolinks:before-cache", function () {
         if (window.Trustpilot) {
@@ -169,48 +174,15 @@
                                     <label for="utility"></label>
                                     <input id="utility" class="" type="text" name="utility" value="{{ $util->id }}" required/>
                                 </div>
-                                <label for="start">From: </label>
-                                <select name="start">
-                                    <option value="7">7:00</option>
-                                    <option value="8">8:00</option>
-                                    <option value="9">9:00</option>
-                                    <option value="10">10:00</option>
-                                    <option value="11">11:00</option>
-                                    <option value="12">12:00</option>
-                                    <option value="13">13:00</option>
-                                    <option value="14">14:00</option>
-                                    <option value="15">15:00</option>
-                                    <option value="16">16:00</option>
-                                    <option value="17">17:00</option>
-                                    <option value="18">18:00</option>
-                                    <option value="19">19:00</option>
-                                    <option value="20">20:00</option>
-                                    <option value="21">21:00</option>
-                                    <option value="22">22:00</option>
-                                    <option value="23">23:00</option>
-                                    <option value="24">00:00</option>
-                                </select>
-                                <label for="end">To: </label>
-                                <select name="end">
-                                <option value="7">7:00</option>
-                                    <option value="8">8:00</option>
-                                    <option value="9">9:00</option>
-                                    <option value="10">10:00</option>
-                                    <option value="11">11:00</option>
-                                    <option value="12">12:00</option>
-                                    <option value="13">13:00</option>
-                                    <option value="14">14:00</option>
-                                    <option value="15">15:00</option>
-                                    <option value="16">16:00</option>
-                                    <option value="17">17:00</option>
-                                    <option value="18">18:00</option>
-                                    <option value="19">19:00</option>
-                                    <option value="20">20:00</option>
-                                    <option value="21">21:00</option>
-                                    <option value="22">22:00</option>
-                                    <option value="23">23:00</option>
-                                    <option value="24">00:00</option>
-                                </select>
+                                <input type="text" name="datetime" id="datetime" placeholder="Start" /><br>
+                                <input type="text" name="datetime" id="datetime" placeholder="End" />
+                                <script>
+                                flatpickr("#datetime", {
+                                    enableTime: true,
+                                    dateFormat: "Y-m-d H:i",
+                                });
+                                </script>
+                            
                                 <br><br>
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
                                     Rent Now

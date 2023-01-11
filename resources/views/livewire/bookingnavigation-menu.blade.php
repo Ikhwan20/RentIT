@@ -12,13 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/active" :active="request()->routeIs('/active')">
+                    <x-jet-nav-link href="/active" :active="request()->routeIs('order.active')">
                         {{ __('Active') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/upcoming" :active="request()->routeIs('/upcoming')">
+                    <x-jet-nav-link href="/upcoming" :active="request()->routeIs('order.upcoming')">
                         {{ __('Upcoming') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/ended" :active="request()->routeIs('/ended')">
+                    <x-jet-nav-link href="/ended" :active="request()->routeIs('order.ended')">
                         {{ __('Ended') }}
                     </x-jet-nav-link>
                 </div>
