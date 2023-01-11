@@ -14,7 +14,8 @@ class OrderController extends Controller
     {
         $utility = $request->input('utility');
         $renter = Auth::id();
-        $datetime = $request->input('datetime');
+        $start = $request->input('start');
+        $end = $request->input('end');
         
         $UtilityData = Utility::where('id', $utility)->get();
         
@@ -22,7 +23,7 @@ class OrderController extends Controller
             $totalPrice = 10;
         }
 
-        $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'datetime'=>$datetime, 'totalPrice'=>$totalPrice]);
+        $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'start'=>$start, 'end'=>$end, 'totalPrice'=>$totalPrice]);
         return view('stripe', ['order'=> $order, 'utility' => $UtilityData]);
     }
 

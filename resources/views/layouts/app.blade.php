@@ -20,7 +20,7 @@
         <!-- Styles -->
         @livewireStyles
         <meta charset="utf-8">
-        <meta name="viewport" content="width-device-width",intial-scale=1">
+        <meta name="viewport" content="width-device-width",intial-scale="1">
         <title>RentalIT</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel= "stylesheet" type="text/css" href="https://cdn,jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
