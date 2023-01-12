@@ -54,6 +54,47 @@
                 <x-input type="file" id="photo" name="photo" class="block mt-1 w-500"/>
             </div>
 
+            <!-- Google Map -->
+            <div class="mt-4">
+
+                <button onclick="updateposition()">Update Position</button>
+                <div id="map"></div>
+
+                <x-label for="Map" :value="__('Set Pickup Location')" /><br>
+                <style> */
+                    #map {
+                      height: 100%;
+                    }
+                    </style>
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCduXsC4O34hqxg2g7Tbs5LuQfV_INwsYQ&callback=initMap&v=weekly"
+                defer
+                ></script>
+                <script>
+                    let map;
+                            function initMap() {
+                            // The location of Uluru
+                                const uluru = { lat: -25.344, lng: 131.031 };
+                                // The map, centered at Uluru
+                                const map = new google.maps.Map(document.getElementById("map"), {
+                                    zoom: 15,
+                                    center: uluru,
+                                });
+                                // The marker, positioned at Uluru
+                                const marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map,
+                                });
+                                }
+                </script>
+
+                funtion updateposition()
+                {
+                    const latlng = { lat: -25.344, lng: 131.031 };
+                    alert('position update function's);
+                }
+            </div>
+
             <button type="submit" class="bg-green-700 hover:bg-green-900 text-white font-bold my-3 px-3 py-2 rounded-lg">
                 Submit
             </button>
