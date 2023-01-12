@@ -174,8 +174,10 @@
                                     <label for="utility"></label>
                                     <input id="utility" class="" type="text" name="utility" value="{{ $util->id }}" required/>
                                 </div>
-                                <input type="text" name="datetime" id="datetime" placeholder="Start" /><br>
-                                <input type="text" name="datetime" id="datetime" placeholder="End" />
+                                
+                                <input type="text" name="start" id="datetime" placeholder="Start" /><br><br>
+                                <input type="text" name="end" id="datetime" placeholder="End" />
+
                                 <script>
                                 flatpickr("#datetime", {
                                     enableTime: true,

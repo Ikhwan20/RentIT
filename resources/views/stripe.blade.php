@@ -65,8 +65,8 @@
             <div class="card-body">
                 <p class="text-3xl font-bold pl-10">{{ $util->name }}</p>
                 <img src="{{ asset($util->photo) }}"></br>
-                <p class="text-xl pl-10">Duration : {{ $order->duration }} hours</p>
-                <span class="text-xl pl-10" itemprop="price">Total: RM {{ $order->totalPrice }}</span>
+                <p class="text-xl pl-10">Duration : ? hours</p>
+                <span class="text-xl pl-10" itemprop="price">Total: RM ?</span>
             </div>
             @endforeach
         </div>
