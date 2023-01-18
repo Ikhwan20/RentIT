@@ -47,6 +47,9 @@ class OrderController extends Controller
     public function showactiveorder(){
         $id = Auth::id();
         $order = Order::where('renter', $id)->where('active', true)->get();
+        if ($order->isEmpty()) {
+            return redirect()->route('booking.dash')->with('message', 'You have no active order');
+        }
         $utility = $order[0]->utility ;
         $UtilityData = Utility::where('id', $utility)->get();
         return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
@@ -55,6 +58,9 @@ class OrderController extends Controller
     public function showupcomingorder(){
         $id = Auth::id();
         $order = Order::where('renter', $id)->where('active', false)->where('ended', false)->get();
+        if ($order->isEmpty()) {
+            return redirect()->route('booking.dash')->with('message', 'You have no upcoming order');
+        }
         $utility = $order[0]->utility ;
         $UtilityData = Utility::where('id', $utility)->get();
         return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);
@@ -63,6 +69,9 @@ class OrderController extends Controller
     public function showendedorder(){
         $id = Auth::id();
         $order = Order::where('renter', $id)->where('ended', true)->get();
+        if ($order->isEmpty()) {
+            return redirect()->route('booking.dash')->with('message', 'You have no ended order');
+        }
         $utility = $order[0]->utility;
         $UtilityData = Utility::where('id', $utility)->get();
         return view('utility/order', ['orders'=> $order, 'utility' => $UtilityData]);

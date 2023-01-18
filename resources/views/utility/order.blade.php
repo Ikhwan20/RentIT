@@ -1,4 +1,4 @@
--<x-booking-layout>
+<x-booking-layout>
 
 <div class="pt-6 px-4 text-xl font-bold">
     Active
