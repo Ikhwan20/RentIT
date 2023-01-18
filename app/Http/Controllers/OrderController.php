@@ -16,15 +16,32 @@ class OrderController extends Controller
         $renter = Auth::id();
         $start = $request->input('start');
         $end = $request->input('end');
+
+        $datetime1 = new \DateTime($start);
+        $datetime2 = new \DateTime($end);
+        $interval = new \DateInterval('PT1H');
+        $period = new \DatePeriod($datetime1, $interval, $datetime2);
+
+        $duration = 0;
+
+        foreach ($period as $dt) {
+            $duration++;
+        }
         
         $UtilityData = Utility::where('id', $utility)->get();
         
-        foreach($UtilityData as $util){
-            $totalPrice = 10;
-        }
+        $totalPrice = $UtilityData[0]->prices * $duration;
 
-        $order = Order::create(['utility'=>$utility, 'renter'=>$renter, 'start'=>$start, 'end'=>$end, 'totalPrice'=>$totalPrice]);
-        return view('stripe', ['order'=> $order, 'utility' => $UtilityData]);
+        $order = new Order();
+        $order->utility = $utility;
+        $order->renter = $renter;
+        $order->start = $start;
+        $order->end = $end;
+        $order->duration = $duration;
+        $order->totalPrice = $totalPrice;
+        $order->save();
+
+        return view('stripe', ['order'=> $order, 'utility' => $UtilityData[0]]);
     }
 
     public function showactiveorder(){

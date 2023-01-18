@@ -20,7 +20,8 @@ return new class extends Migration
             $table->foreignId('renter')->nullable()->references('id')->on('users');
             $table->string('start')->nullable();
             $table->string('end')->nullable();
-            $table->double('totalPrice');
+            $table->integer('duration');
+            $table->integer('totalPrice');
             $table->boolean('active')->default(false);
             $table->boolean('ended')->default(false);
         });

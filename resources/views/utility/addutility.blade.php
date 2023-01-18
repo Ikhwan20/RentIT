@@ -57,43 +57,36 @@
             <!-- Google Map -->
             <div class="mt-4">
 
-                <button onclick="updateposition()">Update Position</button>
                 <div id="map"></div>
+                <input type="hidden" id="latitude" name="latitude" value="{{ old('latitude') }}">
+                <input type="hidden" id="longitude" name="longitude" value="{{ old('longitude') }}">
 
-                <x-label for="Map" :value="__('Set Pickup Location')" /><br>
-                <style> */
-                    #map {
-                      height: 100%;
-                    }
-                    </style>
-                <script
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCduXsC4O34hqxg2g7Tbs5LuQfV_INwsYQ&callback=initMap&v=weekly"
-                defer
-                ></script>
                 <script>
-                    let map;
-                            function initMap() {
-                            // The location of Uluru
-                                const uluru = { lat: -25.344, lng: 131.031 };
-                                // The map, centered at Uluru
-                                const map = new google.maps.Map(document.getElementById("map"), {
-                                    zoom: 15,
-                                    center: uluru,
-                                });
-                                // The marker, positioned at Uluru
-                                const marker = new google.maps.Marker({
-                                    position: uluru,
-                                    map: map,
-                                });
-                                }
-                </script>
+                    var map;
+                    var marker;
+                    var lat = document.getElementById('latitude').value || 0;
+                    var lng = document.getElementById('longitude').value || 0;
 
-                funtion updateposition()
-                {
-                    const latlng = { lat: -25.344, lng: 131.031 };
-                    alert('position update function's);
-                }
-            </div>
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: lat, lng: lng},
+                            zoom: 15
+                        });
+
+                        marker = new google.maps.Marker({
+                            position: {lat: lat, lng: lng},
+                            map: map,
+                            draggable: true
+                        });
+
+                        google.maps.event.addListener(marker, 'dragend', function (event) {
+                            document.getElementById('latitude').value = this.getPosition().lat();
+                            document.getElementById('longitude').value = this.getPosition().lng();
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap" async defer></script>
+                </div>
 
             <button type="submit" class="bg-green-700 hover:bg-green-900 text-white font-bold my-3 px-3 py-2 rounded-lg">
                 Submit
