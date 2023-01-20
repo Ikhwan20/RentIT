@@ -1,30 +1,28 @@
 <x-booking-layout>
 
-<div class="pt-6 px-4 text-xl font-bold">
-    Active
-</div>
-
 <br/>
-            <table class="w-full ml-3 text-sm text-gray-500 dark:text-gray-400">
-                <thead class="text-l text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="py-3 px-6">#</th>
-                        <th scope="col" class="py-3 px-6">Utility</th>
-                        <th scope="col" class="py-3 px-6">Start Time</th>
-                        <th scope="col" class="py-3 px-6">End Time</th>
-                </thead>
-                <tbody class="text-l ml-3 text-center">
-                @foreach($orders as $order)
-                @foreach($utility as $util)
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $util->name }}</td>
-                        <td>{{ $order->start }}</td>
-                        <td>{{ $order->end }}</td>
-                    </tr>
-                @endforeach
-                @endforeach
-                </tbody>
-            </table>
+            @foreach($orders as $order)
+            @foreach($utility as $util)
+            <div class="flex flex-row rounded-lg overflow-hidden shadow-md mx-10">
+                <img src="{{ url($util->photo) }}" alt="Product Image" class="w-48 h-48">
+                <div class="px-6 py-4 w-50">
+                    <div class="font-bold text-xl mb-2 px-3">{{ $util->name }}</div>
+
+                    <div class="px-1 py-4 flex flex-row">
+                        <span class="inline-block rounded-full px-3 py-1 text-l font-semibold text-gray-700 mr-2">
+                            Start : {{$order->start}}
+                        </span>
+                        <span class="inline-block  rounded-full px-13 py-1 text-l font-semibold text-gray-700 mr-2">
+                            End : {{$order->end}}
+                        </span>
+                    </div>
+                    <button class="bg-blue-500 text-white rounded-full ml-3 px-4 py-1">Update</button>
+
+                </div>
+
+            </div>
+
+            @endforeach
+            @endforeach
 
 </x-booking-layout>
