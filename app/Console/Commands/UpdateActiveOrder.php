@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Order;
+use Carbon\Carbon;
 
 class UpdateActiveOrder extends Command
 {
@@ -12,14 +13,14 @@ class UpdateActiveOrder extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'update:active-order';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Update the active column of orders to true, when the start time is less than or equal to the current time and end time is greater';
 
     /**
      * Execute the console command.
@@ -33,6 +34,14 @@ class UpdateActiveOrder extends Command
             $order->active = true;
             $order->save();
         }
+
+        $endedOrders = Order::where('end', '<=', Carbon::now())->where('ended', false)->get();
+        foreach ($endedOrders as $order) {
+            $order->active = false;
+            $order->ended = true;
+            $order->save();
+        }
+        
         return Command::SUCCESS;
     }
 }
