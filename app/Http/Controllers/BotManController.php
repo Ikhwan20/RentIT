@@ -1,59 +1,74 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use BotMan\BotMan\Messages\Incoming\Answer;
-
+use App\Http\Controllers\Controller;
 
 class BotManController extends Controller
 {
     public function index()
     {
         $botman = app('botman');
-
         $botman->fallback(function($bot)
        {
-            $message = $bot->getMessage();
-            $bot->reply('Sorry i do not understand this message :  '. $message->getText());
-            $bot->reply('To use this chatBot, please enter : start');
+            $bot->reply('Sorry, I do not understand this message. Please select one of the options below:');
+            $bot->reply('1. What are your hours of operation?');
+            $bot->reply('2. How can I contact customer support?');
+            $bot->reply('3. What is your return policy?');
+            $bot->reply('4. How do I rent equipment?');
+            $bot->reply('5. What types of equipment do you offer?');
+            $bot->reply('6. How do I pay for my rental?');
+            $bot->reply('7. Other inquiries');
        });
-
-        $botman->hears('{start}', function($botman,$start)
+        $botman->hears('{option}', function($botman, $option)
        {
-            if($start == 'start'){
-                $botman->ask('Please enter your name?' .function(Answer $answer)
-                {
-                    $this->fname=$answer->getText();
-                    $this->say('Nice to meet you '. $this->fname);
-                    $this->ask('What can we help you? Please Choose 1 until 5 '. function(Answer $answer)
-                    {
-                        $this->chs = $answer->getText();
-                        if($answer == '1')
-                            $botman->reply("Our company policy is to ensure our renter and rentee can rent out their utilities through our platform safely");
-                        elseif($answer == '2')
-                            $botman->reply("No, our company do not provide any delivery service for user");
-                        elseif($answer == '3')
-                            $botman->reply("Any type of delivery service is allowed , but our company is not responsible for it");
-                        elseif($answer == '4')
-                            $botman->reply("Our based company is at University Teknologi Malaysia , Skudai");
-                        elseif($answer == '5')
-                            $botman->reply("You can refer to our FAQ to see if your item can be rent out through our platform");
-                        else
-                            $botman->reply("You can contanct our customer service hepline for any inquiry : 011-37318975");
+            switch ($option) {
+                case '1':
+                    $botman->reply('Our hours of operation are Monday-Friday 9am-5pm EST.');
+                    break;
+                case '2':
+                    $botman->reply('You can contact customer support by emailing support@example.com or by calling 555-555-5555.');
+                    break;
+                case '3':
+                    $botman->reply('Our return policy is as follows:');
+                    $botman->reply('- Items must be returned within 30 days of purchase.');
+                    $botman->reply('- Items must be in original condition and packaging.');
+                    $botman->reply('- Refunds will be issued in the original form of payment.');
+                    break;
+                case '4':
+                    $botman->reply('You can rent equipment by visiting our website and browsing our inventory. Once you have selected the equipment you would like to rent, you can add it to your cart and proceed to checkout.');
+                    break;
+                case '5':
+                    $botman->reply('We offer a wide range of equipment for rent including:');
+                    $botman->reply('- Generators');
+                    $botman->reply('- Air compressors');
+                    $botman->reply('- Power tools');
+                    $botman->reply('- Construction equipment');
+                    $botman->reply('- And more!');
+                    break;
+                case '6':
+                    $botman->reply('You can pay for your rental by credit card or debit card.');
+                    break;
+                case '7':
+                    $botman->ask('What other inquiries do you have?', function(Answer $answer) {
+                        $botman->reply('Thank you for your inquiry. We will get back to you as soon as possible.');
                     });
-                });
+                    break;
+                default:
+                    $botman->reply('Please select one of the options below:');
+                    $botman->reply('1. What are your hours of operation?');
+                    $botman->reply('2. How can I contact customer support?');
+                    $botman->reply('3. What is your return policy?');
+                    $botman->reply('4. How do I rent equipment?');
+                    $botman->reply('5. What types of equipment do you offer?');
+                    $botman->reply('6. How do I pay for my rental?');
+                    $botman->reply('7. Other inquiries');
+                    break;
+                }
+           });
             
-            }else{
-                $botman->reply('To use this chatBot, please enter : start');
-            }
-       });
-        
-        $botman->listen();
+            $botman->listen();
+        }
     }
-
-    
-
-    
-}

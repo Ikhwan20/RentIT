@@ -216,4 +216,6 @@ return [
         'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
     ])->toArray(),
 
+
+    
 ];
