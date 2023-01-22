@@ -9,19 +9,19 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- Scripts -->
-        @vite(['public/css/app.css', 'resources/js/app.js'])
-        @vite(['public/css/bootstrap.css'])
-        @vite(['public/css/ui.css'])
-        @vite(['public/css/responsive.css'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['assets/css/bootstrap.css'])
+        @vite(['assets/css/ui.css'])
+        @vite(['assets/css/responsive.css'])
 
         <!-- Styles -->
         @livewireStyles
         <meta charset="utf-8">
-        <meta name="viewport" content="width-device-width",intial-scale="1">
+        <meta name="viewport" content="width-device-width",intial-scale=1">
         <title>RentalIT</title>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel= "stylesheet" type="text/css" href="https://cdn,jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
         <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
@@ -39,8 +39,7 @@
 <div class="container">
     <ul class="navbar-nav d-none d-md-flex mr-auto">
     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="/utility">Rent your utility</a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ route('booking.dash') }}">Booking</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
     </ul>
     <ul class="navbar-nav">
     <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
@@ -51,8 +50,10 @@
 </nav> <!-- header-top-light.// -->
 
 
+        <x-jet-banner />
+
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            @livewire('bookingnavigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))

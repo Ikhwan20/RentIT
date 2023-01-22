@@ -11,16 +11,17 @@ class BotManController extends Controller
     public function index()
     {
         $botman = app('botman');
+
         $botman->fallback(function($bot)
        {
             $bot->reply('Sorry, I do not understand this message. Please select one of the options below:');
-            $bot->reply('1. What are your hours of operation?');
-            $bot->reply('2. How can I contact customer support?');
-            $bot->reply('3. What is your return policy?');
-            $bot->reply('4. How do I rent equipment?');
-            $bot->reply('5. What types of equipment do you offer?');
-            $bot->reply('6. How do I pay for my rental?');
-            $bot->reply('7. Other inquiries');
+            $botman->reply('1. What are your hours of operation?<br>
+                    2. How can I contact customer support?<br>
+                    3. What is your return policy?<br>
+                    4. How do I rent equipment?<br>
+                    5. What types of equipment do you offer?<br>
+                    6. How do I pay for my rental?<br>
+                    7. Other inquiries');
        });
         $botman->hears('{option}', function($botman, $option)
        {
@@ -58,13 +59,13 @@ class BotManController extends Controller
                     break;
                 default:
                     $botman->reply('Please select one of the options below:');
-                    $botman->reply('1. What are your hours of operation?');
-                    $botman->reply('2. How can I contact customer support?');
-                    $botman->reply('3. What is your return policy?');
-                    $botman->reply('4. How do I rent equipment?');
-                    $botman->reply('5. What types of equipment do you offer?');
-                    $botman->reply('6. How do I pay for my rental?');
-                    $botman->reply('7. Other inquiries');
+                    $botman->reply('1. What are your hours of operation?<br>
+                    2. How can I contact customer support?<br>
+                    3. What is your return policy?<br>
+                    4. How do I rent equipment?<br>
+                    5. What types of equipment do you offer?<br>
+                    6. How do I pay for my rental?<br>
+                    7. Other inquiries');
                     break;
                 }
            });
