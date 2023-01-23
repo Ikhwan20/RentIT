@@ -19,9 +19,4 @@ class Order extends Model
         'renter',
         'utility'
     ];
-
-    public function utility()
-    {
-        return $this->belongsTo(Utility::class);
-    }
 }

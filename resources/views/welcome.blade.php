@@ -303,12 +303,8 @@
             <figcaption class="info-wrap">
               <a href="{{ url('/utilitydesc'.$util->id) }}" class="title">{{ $util->name }}</a>
               
-              <div class="flex flex-row">
+              
               <div class="price mt-1">RM {{ $util->prices }}</div> <!-- price-wrap.// -->
-              <div class="wishlist-btn-wrap">
-                <button class="btn btn-primary btn-sm wishlist-btn">Add to Wishlist</button>
-            </div>
-            </div>
             </figcaption>
           </div>
         </div> <!-- col.// -->

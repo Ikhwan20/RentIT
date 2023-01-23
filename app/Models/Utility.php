@@ -25,9 +25,4 @@ class Utility extends Model
     protected static $marks = [
         Favorite::class,
     ];
-
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
-    }
 }
