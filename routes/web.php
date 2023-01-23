@@ -72,6 +72,13 @@ Route::get('/map', function() {
     return view('geolocate');
 });
 
+Route::get('/claim', function() {
+    return view('insurance/claiminsurance');
+});
+
+Route::get('/status', function() {
+    return view('insurance/statusinsurance');
+});
 
 Route::get('/search', [UtilityController::class, 'search']);
 
