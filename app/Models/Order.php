@@ -21,4 +21,9 @@ class Order extends Model
         'active',
         'ended'
     ];
+
+    public function utility()
+    {
+        return $this->belongsTo(Utility::class);
+    }
 }
