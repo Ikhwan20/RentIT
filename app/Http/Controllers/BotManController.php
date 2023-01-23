@@ -53,7 +53,8 @@ class BotManController extends Controller
                     $botman->reply('You can pay for your rental by credit card or debit card.');
                     break;
                 case '7':
-                    $botman->ask('What other inquiries do you have?', function(Answer $answer) {
+                    $botman->ask('What other inquiries do you have?', function(Answer $answer) 
+                    {
                         $botman->reply('Thank you for your inquiry. We will get back to you as soon as possible.');
                     });
                     break;

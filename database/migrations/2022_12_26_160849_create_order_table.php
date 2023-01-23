@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('utility')->nullable()->references('id')->on('utility');
+            $table->foreignId('utility_id')->nullable()->references('id')->on('utility');
             $table->foreignId('renter')->nullable()->references('id')->on('users');
             $table->string('start')->nullable();
             $table->string('end')->nullable();
