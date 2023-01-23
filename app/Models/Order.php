@@ -17,6 +17,8 @@ class Order extends Model
         'end',
         'totalPrice',
         'renter',
-        'utility'
+        'utility',
+        'active',
+        'ended'
     ];
 }

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('utility')->nullable()->references('id')->on('utility');
             $table->foreignId('renter')->nullable()->references('id')->on('users');
-            $table->string('start')->nullable();
-            $table->string('end')->nullable();
+            $table->datetime('start')->nullable();
+            $table->datetime('end')->nullable();
             $table->integer('duration');
             $table->integer('totalPrice');
             $table->boolean('active')->default(false);
