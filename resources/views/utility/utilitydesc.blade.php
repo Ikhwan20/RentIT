@@ -176,15 +176,27 @@
                                     <input id="utility" class="" type="text" name="utility" value="{{ $util->id }}" required/>
                                 </div>
                                 
-                                <input type="text" name="start" id="datetime" placeholder="Start" /><br><br>
-                                <input type="text" name="end" id="datetime" placeholder="End" />
+                                <input type="text" name="start" id="start-datetime" placeholder="Start" /><br><br>
+                                <input type="text" name="end" id="end-datetime" placeholder="End" />
 
                                 <script>
-                                flatpickr("#datetime", {
+                                var startDateInput = document.getElementById("start-datetime");
+                                var endDateInput = document.getElementById("end-datetime");
+
+                                flatpickr(startDateInput, {
                                     enableTime: true,
                                     dateFormat: "Y-m-d H:i",
+                                    minDate: new Date(),
+                                    onChange: function(selectedDates, dateStr, instance) {
+                                        endDateInput.flatpickr({
+                                            enableTime: true,
+                                            dateFormat: "Y-m-d H:i",
+                                            minDate: dateStr
+                                        });
+                                    }
                                 });
                                 </script>
+
                             
                                 <br><br>
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="checkoutbutton">
