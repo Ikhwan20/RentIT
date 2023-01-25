@@ -99,23 +99,23 @@ Route::get('/Aboutus', function(){
 });
 
 Route::get('/Career', function(){
-    return view('FAQ/renter');
+    return view('FAQ/Career');
 });
 
 Route::get('/rules', function(){
-    return view('FAQ/renter');
+    return view('FAQ/rules');
 });
 
 Route::get('/coverarea', function(){
-    return view('FAQ/renter');
+    return view('FAQ/area');
 });
 
 Route::get('/contactus', function(){
-    return view('FAQ/renter');
+    return view('FAQ/contact');
 });
 
 Route::get('/orderstatus', function(){
-    return view('FAQ/renter');
+    return view('FAQ/order');
 });
 
 
