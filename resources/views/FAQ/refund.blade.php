@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
   <div>
     <style>
       h2{
@@ -104,4 +104,4 @@
   
       
     </div>
-  </x-app-layout>
+  </x-guest-layout>

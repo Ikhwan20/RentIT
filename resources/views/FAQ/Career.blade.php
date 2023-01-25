@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <div>
       <h1 style="text-align:center; font-size: 36px; font-weight: bold; color: #0077c9;">Career Opportunity in Utilities Rental</h1>
       <br>
@@ -25,5 +25,5 @@
       <p style="font-size: 18px;">If you're passionate about the utilities rental industry and have a desire to work with cutting-edge technology, we want to hear from you. We offer competitive compensation, benefits, and opportunities for professional growth. Apply now and take the next step in your career with us!
       </p>
     </div>
-  </x-app-layout>
+  </x-guest-layout>
   

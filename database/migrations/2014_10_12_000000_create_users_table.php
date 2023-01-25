@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->boolean('isAdmin')->default(false);
+            $table->integer('income')->nullable();
             $table->rememberToken();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();

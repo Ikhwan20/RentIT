@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <div>
       <h1 style="text-align:center; font-size: 36px; font-weight: bold; color: #0077c9;">Rules and Regulations for Utilities Rental</h1>
       <br>
@@ -24,5 +24,5 @@
       <p style="font-size: 18px;">Please review these terms and conditions carefully before renting any equipment. If you have any questions, please contact us for clarification.
       </p>
     </div>
-  </x-app-layout>
+  </x-guest-layout>
   

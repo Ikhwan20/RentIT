@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <div>
       <h1 style="text-align:center; font-size: 36px; font-weight: bold; color: #0077c9;">Welcome to our Website for University Teknologi Malaysia and Taman Universiti</h1>
       <br>
@@ -23,5 +23,5 @@
       <p style="font-size: 18px;">We are committed to providing valuable services to the University Teknologi Malaysia and Taman Universiti communities. Thank you for choosing our website.
       </p>
     </div>
-  </x-app-layout>
+  </x-guest-layout>
   

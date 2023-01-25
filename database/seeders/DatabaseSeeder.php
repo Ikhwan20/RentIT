@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Utility::factory()->create([
             'name' => 'Table Fan',
             'brand' => 'Midea',
-            'prices' => '2',
+            'prices' => '5',
             'photo' => '/storage/images/table fan.jpg',
             'category' => 'Furniture',
             'description' => '12" Table Fan',
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Utility::factory()->create([
             'name' => 'Electric Kettle',
             'brand' => 'La Gourmet',
-            'prices' => '2',
+            'prices' => '4',
             'photo' => '/storage/images/electric kettle.jpg',
             'category' => 'Kitchen & Laundry',
             'description' => 'Large capacity, boil dry protection & rapid boiling',
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Utility::factory()->create([
             'name' => 'Electric Cooker',
             'brand' => 'T0R0S',
-            'prices' => '3',
+            'prices' => '4',
             'photo' => '/storage/images/electric cooker.jpg',
             'category' => 'Kitchen & Laundry',
             'description' => 'Large capacity, boil dry protection & rapid boiling',
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Utility::factory()->create([
             'name' => 'Mini Projector',
             'brand' => 'AAO',
-            'prices' => '4',
+            'prices' => '6',
             'photo' => '/storage/images/mini projector.jpg',
             'category' => 'Computers',
             'description' => 'Easy to bring',
@@ -92,7 +92,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Utility::factory()->create([
             'name' => 'Laptop',
             'brand' => 'HP',
-            'prices' => '6',
+            'prices' => '10',
             'photo' => '/storage/images/hp laptop.jpg',
             'category' => 'Computers',
             'description' => '14" screen',
@@ -107,6 +107,72 @@ class DatabaseSeeder extends Seeder
             'category' => 'Entertainment',
             'description' => 'Handheld, easy to bring',
             'owner' => '2',       
+        ]);
+
+        \App\Models\Order::factory()->create([
+            'start' => '2023-01-24 12:00:00',
+            'end' => '2023-01-26 12:0:00',
+            'duration' => '48',
+            'totalPrice' => '8',
+            'active' => true,
+            'ended' => false,
+            'utility_id' => '2',
+            'renter' => '3'       
+        ]);
+
+        \App\Models\Order::factory()->create([
+            'start' => '2023-01-23 12:00:00',
+            'end' => '2023-01-24 12:0:00',
+            'duration' => '24',
+            'totalPrice' => '5',
+            'active' => false,
+            'ended' => true,
+            'utility_id' => '1',
+            'renter' => '3'       
+        ]);
+
+        \App\Models\Order::factory()->create([
+            'start' => '2023-01-26 12:00:00',
+            'end' => '2023-01-28 12:0:00',
+            'duration' => '48',
+            'totalPrice' => '8',
+            'active' => false,
+            'ended' => false,
+            'utility_id' => '3',
+            'renter' => '3'       
+        ]);
+
+        \App\Models\Order::factory()->create([
+            'start' => '2023-01-23 12:00:00',
+            'end' => '2023-01-25 12:0:00',
+            'duration' => '48',
+            'totalPrice' => '3',
+            'active' => false,
+            'ended' => true,
+            'utility_id' => '4',
+            'renter' => '2'       
+        ]);
+
+        \App\Models\Order::factory()->create([
+            'start' => '2023-01-27 12:00:00',
+            'end' => '2023-01-28 12:0:00',
+            'duration' => '24',
+            'totalPrice' => '12',
+            'active' => false,
+            'ended' => false,
+            'utility_id' => '5',
+            'renter' => '2'       
+        ]);
+
+        \App\Models\Order::factory()->create([
+            'start' => '2023-01-25 12:00:00',
+            'end' => '2023-01-27 12:0:00',
+            'duration' => '48',
+            'totalPrice' => '20',
+            'active' => true,
+            'ended' => false,
+            'utility_id' => '6',
+            'renter' => '2'       
         ]);
     }
 }

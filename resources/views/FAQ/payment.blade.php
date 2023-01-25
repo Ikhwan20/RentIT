@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
   <div>
     <h1 style="text-align:center";><b>Payment Term</b></h1>
     <br>
@@ -25,4 +25,4 @@
         renter and rentee. This <b>WalletIT</b> can be top up and be use as digital wallet for user to rent out any utilities in our website. Rent easy with us!.
     </p>
   </div>
-</x-app-layout>
+</x-guest-layout>

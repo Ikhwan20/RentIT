@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <div>
     <style>
       h3,p,h2{
@@ -27,4 +27,4 @@
       <h3>We introduce you our new RentIT influencer!</h3>
       <p>Become part of our new future plan. </p>
     </div>
-  </x-app-layout>
+  </x-guest-layout>

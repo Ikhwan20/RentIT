@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <div style="margin: 0 50px;">
       <h1 style="text-align:center; font-size: 36px; font-weight: bold; color: #0077c9;">Contact Us</h1>
       <br>
@@ -14,5 +14,5 @@
       <p style="font-size: 18px;">Click on the chatbot icon on the bottom right corner of the website to ask any questions.</p>
       <h2 style="text-align:center; font-size: 28px; font-weight: bold;">We look forward to hearing from you.</h2>
     </div>
-  </x-app-layout>
+  </x-guest-layout>
   
