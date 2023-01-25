@@ -16,10 +16,12 @@
       <p>To become a rentee is so easy with us .Just follow a few step then you ready to go. After you become a rentee, you can rent out your item through our website.</p>
   <br>
       <h3>Steps to become Rentee</h3>
-      <ol>
-      	<li>Register to our website</li>
-  	   	<li>Go to rentee page <i>(at the top left homepage)</i></li>
-      	<li>Sign up your account as one of the rentee and wait a few minute to get verification from one of our teams</li>              			<li>After being verify, you ready to go!</li>
+      <ol style="margin-left: 5%">
+      	<li><i>1.) Register to our website</i></li>
+  	   	<li><i>2.) Go to rentee page <i>(at the top left homepage)</i></i></li>
+      	<li><i>3.) Sign up your account as one of the rentee and wait a few minute to get verification from one of our teams</i></li> 
+        <br><br>             			
+        <li><i><b>After being verify, you ready to go!<b> </i></li>
       </ol>
   
       
