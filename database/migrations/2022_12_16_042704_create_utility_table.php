@@ -21,6 +21,7 @@ return new class extends Migration
             $table->double('income');
             $table->string('photo');
             $table->string('category');
+            $table->string('status');
             $table->string('description');
             $table->string('location')->nullable();
             $table->foreignId('owner')->nullable()->references('id')->on('users');

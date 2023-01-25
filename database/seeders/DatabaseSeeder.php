@@ -50,7 +50,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Furniture',
             'description' => '12" Table Fan',
             'owner' => '2',
-            'income' => '5',    
+            'income' => '5', 
+            'status' => 'popular',  
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -61,7 +62,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Kitchen & Laundry',
             'description' => 'Large capacity, boil dry protection & rapid boiling',
             'owner' => '2',  
-            'income' => '8',   
+            'income' => '8',  
+            'status' => 'popular',  
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -72,7 +74,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Kitchen & Laundry',
             'description' => 'Large capacity, boil dry protection & rapid boiling',
             'owner' => '2',   
-            'income' => '8',    
+            'income' => '8',   
+            'status' => 'popular',  
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -83,7 +86,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Entertainment',
             'description' => 'Handheld, easy to bring',
             'owner' => '3', 
-            'income' => '3',      
+            'income' => '3',  
+            'status' => 'recommended',     
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -94,7 +98,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Computers',
             'description' => 'Easy to bring',
             'owner' => '3', 
-            'income' => '12',      
+            'income' => '12',  
+            'status' => 'new',     
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -105,7 +110,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Computers',
             'description' => '14" screen',
             'owner' => '3',     
-            'income' => '20',  
+            'income' => '20',
+            'status' => 'new',   
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -116,7 +122,8 @@ class DatabaseSeeder extends Seeder
             'category' => 'Entertainment',
             'description' => 'Handheld, easy to bring',
             'owner' => '2',  
-            'income' => '0',     
+            'income' => '0',  
+            'status' => 'new',    
         ]);
 
         \App\Models\Order::factory()->create([

@@ -135,7 +135,7 @@
                 <figcaption class="info-wrap">
                     <a href="{{ url('/utilitydesc'.$util->id) }}" class="title">{{ $util->name }}</a>
                     <div class="price-wishlist-wrap flex flex-row justify-between">
-                        <div class="price mt-1">RM {{ $util->prices }}</div>
+                    <div class="price mt-1">RM {{ number_format($util->prices, 2) }} / Day</div>
                         <form  action="{{ route('favorite.add', $util->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf

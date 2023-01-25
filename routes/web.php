@@ -20,8 +20,6 @@ use App\Http\Controllers\WishlistController;
 |
 */
 
-Route::get('/', [UtilityController::class, 'welcome'])->name('welcome');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
