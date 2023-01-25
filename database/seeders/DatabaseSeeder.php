@@ -126,6 +126,68 @@ class DatabaseSeeder extends Seeder
             'status' => 'new',    
         ]);
 
+        \App\Models\Utility::factory()->create([
+            'name' => 'Airpod',
+            'brand' => 'Apple',
+            'prices' => '4.0',
+            'photo' => '/storage/images/airpod.jpg',
+            'category' => 'Entertainment',
+            'description' => 'Anywhere with music',
+            'owner' => '2',  
+            'income' => '0',  
+            'status' => 'second-hand',    
+        ]);
+
+        \App\Models\Utility::factory()->create([
+            'name' => 'PS4 Controller',
+            'brand' => 'Sony',
+            'prices' => '3.0',
+            'photo' => '/storage/images/PS4.jpg',
+            'category' => 'Entertainment',
+            'description' => 'Charge up with game',
+            'owner' => '3',  
+            'income' => '0',  
+            'status' => 'new',    
+        ]);
+
+        \App\Models\Utility::factory()->create([
+            'name' => 'Gaming Mouse',
+            'brand' => 'Logitech',
+            'prices' => '2.5',
+            'photo' => '/storage/images/mouse.jpg',
+            'category' => 'electronic',
+            'description' => 'Always bring Jerry!',
+            'owner' => '2',  
+            'income' => '0',  
+            'status' => 'new',    
+        ]);
+
+        \App\Models\Utility::factory()->create([
+            'name' => 'Laundry Bag',
+            'brand' => 'IKEA',
+            'prices' => '1.00',
+            'photo' => '/storage/images/laundry.jpg',
+            'category' => 'Home',
+            'description' => 'Easy pickoff',
+            'owner' => '3',  
+            'income' => '0',  
+            'status' => 'new',    
+        ]);
+
+        \App\Models\Utility::factory()->create([
+            'name' => 'Broom',
+            'brand' => 'Daikin',
+            'prices' => '0.50',
+            'photo' => '/storage/images/Broom.jpg',
+            'category' => 'Home',
+            'description' => 'Hogwart Broom? Who knows?',
+            'owner' => '2',  
+            'income' => '0',  
+            'status' => 'new',    
+        ]);
+
+
+
         \App\Models\Order::factory()->create([
             'start' => '2023-01-24 12:00:00',
             'end' => '2023-01-26 12:0:00',
