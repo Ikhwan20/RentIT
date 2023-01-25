@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
+class ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -950,6 +950,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Carbon\\FactoryImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/FactoryImmutable.php',
         'Carbon\\Language' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Language.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
+        'Carbon\\MessageFormatter\\MessageFormatterMapper' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/MessageFormatter/MessageFormatterMapper.php',
         'Carbon\\PHPStan\\AbstractMacro' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/AbstractMacro.php',
         'Carbon\\PHPStan\\Macro' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/Macro.php',
         'Carbon\\PHPStan\\MacroExtension' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/MacroExtension.php',
@@ -1093,6 +1094,7 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'DASPRiD\\Enum\\Exception\\SerializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/SerializeNotSupportedException.php',
         'DASPRiD\\Enum\\Exception\\UnserializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/UnserializeNotSupportedException.php',
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
+        'Database\\Factories\\OrderFactory' => __DIR__ . '/../..' . '/database/factories/OrderFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Factories\\UtilityFactory' => __DIR__ . '/../..' . '/database/factories/UtilityFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
@@ -1127,42 +1129,19 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
         'Dflydev\\DotAccessData\\Exception\\InvalidPathException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/InvalidPathException.php',
         'Dflydev\\DotAccessData\\Exception\\MissingPathException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/MissingPathException.php',
         'Dflydev\\DotAccessData\\Util' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Util.php',
-        'Doctrine\\Common\\Cache\\ApcCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php',
-        'Doctrine\\Common\\Cache\\ApcuCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php',
-        'Doctrine\\Common\\Cache\\ArrayCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php',
         'Doctrine\\Common\\Cache\\Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Cache.php',
         'Doctrine\\Common\\Cache\\CacheProvider' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php',
-        'Doctrine\\Common\\Cache\\ChainCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php',
         'Doctrine\\Common\\Cache\\ClearableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ClearableCache.php',
-        'Doctrine\\Common\\Cache\\CouchbaseBucketCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseBucketCache.php',
-        'Doctrine\\Common\\Cache\\CouchbaseCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseCache.php',
-        'Doctrine\\Common\\Cache\\ExtMongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ExtMongoDBCache.php',
-        'Doctrine\\Common\\Cache\\FileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
-        'Doctrine\\Common\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
         'Doctrine\\Common\\Cache\\FlushableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php',
-        'Doctrine\\Common\\Cache\\InvalidCacheId' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/InvalidCacheId.php',
-        'Doctrine\\Common\\Cache\\LegacyMongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/LegacyMongoDBCache.php',
-        'Doctrine\\Common\\Cache\\MemcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php',
-        'Doctrine\\Common\\Cache\\MemcachedCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php',
-        'Doctrine\\Common\\Cache\\MongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MongoDBCache.php',
         'Doctrine\\Common\\Cache\\MultiDeleteCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiDeleteCache.php',
         'Doctrine\\Common\\Cache\\MultiGetCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiGetCache.php',
         'Doctrine\\Common\\Cache\\MultiOperationCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiOperationCache.php',
         'Doctrine\\Common\\Cache\\MultiPutCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiPutCache.php',
-        'Doctrine\\Common\\Cache\\PhpFileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php',
-        'Doctrine\\Common\\Cache\\PredisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php',
         'Doctrine\\Common\\Cache\\Psr6\\CacheAdapter' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheAdapter.php',
         'Doctrine\\Common\\Cache\\Psr6\\CacheItem' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheItem.php',
         'Doctrine\\Common\\Cache\\Psr6\\DoctrineProvider' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/DoctrineProvider.php',
         'Doctrine\\Common\\Cache\\Psr6\\InvalidArgument' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/InvalidArgument.php',
         'Doctrine\\Common\\Cache\\Psr6\\TypedCacheItem' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/TypedCacheItem.php',
-        'Doctrine\\Common\\Cache\\RedisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php',
-        'Doctrine\\Common\\Cache\\SQLite3Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php',
-        'Doctrine\\Common\\Cache\\Version' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Version.php',
-        'Doctrine\\Common\\Cache\\VoidCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/VoidCache.php',
-        'Doctrine\\Common\\Cache\\WinCacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php',
-        'Doctrine\\Common\\Cache\\XcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/XcacheCache.php',
-        'Doctrine\\Common\\Cache\\ZendDataCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php',
         'Doctrine\\Common\\EventArgs' => __DIR__ . '/..' . '/doctrine/event-manager/src/EventArgs.php',
         'Doctrine\\Common\\EventManager' => __DIR__ . '/..' . '/doctrine/event-manager/src/EventManager.php',
         'Doctrine\\Common\\EventSubscriber' => __DIR__ . '/..' . '/doctrine/event-manager/src/EventSubscriber.php',
@@ -7263,10 +7242,10 @@ class ComposerStaticInit094ade96c241bf7abdfe6856181b90ca
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit094ade96c241bf7abdfe6856181b90ca::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit4ec782e8f39aa30f686e31024d791e0e::$classMap;
 
         }, null, ClassLoader::class);
     }

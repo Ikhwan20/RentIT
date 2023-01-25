@@ -25,8 +25,9 @@
       <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
         <div class="container">
             <ul class="navbar-nav d-none d-md-flex mr-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Rent Your Utility</a></li>
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/utility">Rent your utility</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ route('booking.dash') }}">Booking</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
