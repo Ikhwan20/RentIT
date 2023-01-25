@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
   <div>
     <style>
       h2{
@@ -16,30 +16,30 @@
       <br>
       <h2>Policy </h2>
       
-      <p>We always make sure our users satisfy with our service. To ensure both party can satisy with our service, we implement certain policy to proctect both renter and rentee</p>
+      <p style="margin-left:3%">We always make sure our users satisfy with our service. To ensure both party can satisy with our service, we implement certain policy to proctect both renter and rentee</p>
     
-      <p>For any defect/broken utilities that been received either renter or rentee, we will ask the respective user to return back to the owner as we always keep policy to always ensure every item that been display in our website must been in good condition</p>
+      <p style="margin-left:3%">For any defect/broken utilities that been received either renter or rentee, we will ask the respective user to return back to the owner as we always keep policy to always ensure every item that been display in our website must been in good condition</p>
      
-      <p>For any refund utilites, the renter will have 48 hour to ask any renfund IF the utilities received had problem.</p>
+      <p style="margin-left:3%">For any refund utilites, the renter will have 48 hour to ask any renfund IF the utilities received had problem.</p>
       <br>
-      <p><i> any inquries you may contact our supportdesk via chatBot</i></p>
+      <p style="margin-left:3%"><i> any inquries you may contact our supportdesk via chatBot</i></p>
 
 
-      <h3>Guide To Return and Refund :</h3>
-      <ol>
-        <li><i>Go to refund policy page</i></li>
+      <h3 style="margin-left:3%">Guide To Return and Refund :</h3>
+      <ol style="margin-left:3%">
+        <li><i>1.) Go to refund policy page</i></li>
         <br>
-        <li><i>Snap pictures of the defective utilities</i></li>
+        <li><i>2.) Snap pictures of the defective utilities</i></li>
         <br>
-        <li><i>Fill out the form</i></li>
+        <li><i>3.) Fill out the form</i></li>
         <br>
-        <li><i>Describe the problem in the form box</i></li>
+        <li><i>4.) Describe the problem in the form box</i></li>
         <br>
-        <li><i>Submit the form</i></li>
+        <li><i>5.) Submit the form</i></li>
       </ol>
     <br><br>
-    <form method="post" action="//submit.form" onSubmit="return validateForm();" styl="text-align:center;">
-        <div style="max-width: 400px;">
+    <form method="post" action="//submit.form" onSubmit="return validateForm();" style="margin-left:3%">
+        <div style="max-width: 100px;">
         </div>
         <div style="padding-bottom: 18px;font-size : 24px;">Report An Issue</div>
         <div style="padding-bottom: 18px;">Reported by<span style="color: red;"> *</span><br/>
@@ -100,8 +100,8 @@
         </script>
       
 
-      <p>This will take 3 working days to get respond from one of our admin</p>
+      <p style="margin-left:3%">This will take 3 working days to get respond from one of our admin</p>
   
       
     </div>
-  </x-app-layout>
+  </x-guest-layout>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
   <div style="background-color:#AED6F1; padding: 20px">
   <style>
     h2, h3, p {
@@ -24,4 +24,4 @@
         <h3 style="padding-bottom: 10px;">Customer Service</h3>
         <p>We pride ourselves on our wide selection of items and our excellent customer service. Our team is dedicated to helping you find the right item for your needs and ensuring a smooth rental process. Try us out today and see how we can help you save money and make your life easier.</p>
       </div>
-</x-app-layout>
+</x-guest-layout>
