@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('brand');
             $table->double('prices');
+            $table->double('income');
             $table->string('photo');
             $table->string('category');
             $table->string('description');

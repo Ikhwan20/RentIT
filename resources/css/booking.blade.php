@@ -39,7 +39,7 @@
 <div class="container">
     <ul class="navbar-nav d-none d-md-flex mr-auto">
     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Renter</a></li>
     </ul>
     <ul class="navbar-nav">
     <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>

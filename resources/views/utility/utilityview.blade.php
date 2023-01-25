@@ -21,6 +21,7 @@
                         <th scope="col" class="py-3 px-6">Photo</th>
                         <th scope="col" class="py-3 px-6">Update</th>
                         <th scope="col" class="py-3 px-6">Delete</th>
+                        <th scope="col" class="py-3 px-6">Income</th>
                     </tr>
                 </thead>
                 <tbody class="text-l ml-3 text-center">
@@ -39,6 +40,7 @@
                             <input name="_method" type="hidden" value="DELETE">
                             <button type="submit" class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded" data-toggle="tooltip" title='Delete'>Delete</button>
                         </form></td>
+                        <td>{{ $util->prices }}</td>
                     </tr>
                 @endforeach
                 </tbody>

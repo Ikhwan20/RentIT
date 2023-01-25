@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Utility;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\DB;
 
@@ -31,6 +32,9 @@ class OrderController extends Controller
         $UtilityData = Utility::where('id', $utility)->get();
         
         $totalPrice = $UtilityData[0]->prices * $duration;
+        $userid = $UtilityData[0]->owner;
+
+        $user = User::where('id', $userid)->get();
 
         $order = new Order();
         $order->utility_id = $utility;
@@ -38,8 +42,23 @@ class OrderController extends Controller
         $order->start = $start;
         $order->end = $end;
         $order->duration = $duration;
-        $order->totalPrice = $totalPrice;
+        $order->totalPrice = $totalPrice / 24;
         $order->save();
+
+        $userincome = $user[0]->income + $totalPrice / 24;
+        $utilincome = $UtilityData[0]->income + $totalPrice / 24;
+
+        DB::table('users')
+    ->updateOrInsert(
+        ['id' => $UtilityData[0]->owner],
+        ['income' => $userincome]
+    );
+
+    DB::table('utility')
+    ->updateOrInsert(
+        ['id' => $utility],
+        ['income' => $utilincome]
+    );
 
         return view('stripe', ['order'=> $order, 'utility' => $UtilityData[0]]);
     }

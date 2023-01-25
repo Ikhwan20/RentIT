@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'phone' => "0184098292",
             'email_verified_at' => '2022-12-19',
             'isAdmin' => true,
+            'income' => '0',
         ]);
 
         \App\Models\User::factory()->create([
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
              'email' => 'shawal@gmail.com',
              'password' => bcrypt('Pa$$word'),
              'phone' => "0111918980",
-             'email_verified_at' => '2022-12-19'
+             'email_verified_at' => '2022-12-19',
+             'income' => '21',
          ]);
 
          \App\Models\User::factory()->create([
@@ -36,7 +38,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'ikhwan@gmail.com',
             'password' => bcrypt('Pa$$word'),
             'phone' => "0111918556",
-            'email_verified_at' => '2022-12-19'
+            'email_verified_at' => '2022-12-19',
+            'income' => '32',
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -46,7 +49,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/table fan.jpg',
             'category' => 'Furniture',
             'description' => '12" Table Fan',
-            'owner' => '2',       
+            'owner' => '2',
+            'income' => '5',    
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -56,7 +60,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/electric kettle.jpg',
             'category' => 'Kitchen & Laundry',
             'description' => 'Large capacity, boil dry protection & rapid boiling',
-            'owner' => '2',     
+            'owner' => '2',  
+            'income' => '8',   
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -66,7 +71,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/electric cooker.jpg',
             'category' => 'Kitchen & Laundry',
             'description' => 'Large capacity, boil dry protection & rapid boiling',
-            'owner' => '2',       
+            'owner' => '2',   
+            'income' => '8',    
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -76,7 +82,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/handheld fan.jpg',
             'category' => 'Entertainment',
             'description' => 'Handheld, easy to bring',
-            'owner' => '3',       
+            'owner' => '3', 
+            'income' => '3',      
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -86,7 +93,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/mini projector.jpg',
             'category' => 'Computers',
             'description' => 'Easy to bring',
-            'owner' => '3',       
+            'owner' => '3', 
+            'income' => '12',      
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -96,7 +104,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/hp laptop.jpg',
             'category' => 'Computers',
             'description' => '14" screen',
-            'owner' => '3',       
+            'owner' => '3',     
+            'income' => '20',  
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -106,7 +115,8 @@ class DatabaseSeeder extends Seeder
             'photo' => '/storage/images/handheld fan.jpg',
             'category' => 'Entertainment',
             'description' => 'Handheld, easy to bring',
-            'owner' => '2',       
+            'owner' => '2',  
+            'income' => '0',     
         ]);
 
         \App\Models\Order::factory()->create([
