@@ -27,6 +27,8 @@
         <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
         <!-- Custom styles for this template -->
         <script src="assets/js/jquery.min.js" type="text/javascript"></script>
