@@ -25,7 +25,7 @@
                 
             </div> 
             <div class="widget-header mr-10 mt-2">
-                        <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-heart"></i></a>
+                        <a href="/wishlist" class="icon icon-sm rounded-circle border"><i class="fa fa-heart"></i></a>
                         <span class="badge badge-pill badge-danger notify">0</span>
                 </div>
                 <!-- Settings Dropdown -->
