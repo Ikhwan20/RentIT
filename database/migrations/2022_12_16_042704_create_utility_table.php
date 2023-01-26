@@ -18,12 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('brand');
             $table->double('prices');
-            $table->double('income');
+            $table->double('income')->default(0);
             $table->string('photo');
             $table->string('category');
-            $table->string('status');
+            $table->string('status')->default('new');
             $table->string('description');
-            $table->string('location')->nullable();
             $table->foreignId('owner')->nullable()->references('id')->on('users');
             $table->boolean('isRent')->default(false);
             $table->foreignId('renter')->nullable()->references('id')->on('users');

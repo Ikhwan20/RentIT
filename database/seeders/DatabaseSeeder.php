@@ -42,6 +42,15 @@ class DatabaseSeeder extends Seeder
             'income' => '32',
         ]);
 
+        \App\Models\User::factory()->create([
+            'name' => 'Bintang',
+            'email' => 'bintang@gmail.com',
+            'password' => bcrypt('Pa$$word'),
+            'phone' => "0161232344",
+            'email_verified_at' => '2022-12-19',
+            'income' => '0',
+        ]);
+
         \App\Models\Utility::factory()->create([
             'name' => 'Table Fan',
             'brand' => 'Midea',
@@ -118,9 +127,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Speaker',
             'brand' => 'Sony',
             'prices' => '5.5',
-            'photo' => '/storage/images/handheld fan.jpg',
+            'photo' => '/storage/images/speaker.jpg',
             'category' => 'Entertainment',
-            'description' => 'Handheld, easy to bring',
+            'description' => 'Blow your ears',
             'owner' => '2',  
             'income' => '0',  
             'status' => 'new',    
@@ -171,7 +180,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Easy pickoff',
             'owner' => '3',  
             'income' => '0',  
-            'status' => 'new',    
+            'status' => 'recommended',    
         ]);
 
         \App\Models\Utility::factory()->create([
@@ -183,7 +192,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Hogwart Broom? Who knows?',
             'owner' => '2',  
             'income' => '0',  
-            'status' => 'new',    
+            'status' => 'popular',    
         ]);
 
 

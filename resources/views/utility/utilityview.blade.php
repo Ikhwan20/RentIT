@@ -38,7 +38,7 @@
                         <td><form method="POST" action="{{ route('utility.delete', $util->id) }}">
                             @csrf
                             <input name="_method" type="hidden" value="DELETE">
-                            <button type="submit" class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded" data-toggle="tooltip" title='Delete'>Delete</button>
+                            <button type="submit" class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded" data-toggle="tooltip" title='Delete' onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
                         </form></td>
                         <td>{{ $util->prices }}</td>
                     </tr>

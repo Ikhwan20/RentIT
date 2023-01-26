@@ -1,6 +1,5 @@
-@extends('layouts.admin')
+<x-app-layout>
 
-@section('content')
 <div class="mt-5 mx-20">
     <div class="flex items-center justify-center bg-white">
         <img src="{{ asset($utility->photo) }}" width= '300' height='300'/>
@@ -14,7 +13,7 @@
 </div><br>
 
     <div class="flex gap-4 items-center justify-center mx-20">
-        <a href="{{ url('/confirm') }}" class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded">Confirm</a>
+        <a href="/utility" class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded">Confirm</a>
         <a href="{{ url('/edit'.$utility->id) }}" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">Edit</a>
         <form method="POST" action="{{ route('utility.delete', $utility->id) }}">
             @csrf
@@ -25,4 +24,4 @@
 
 </div>
 
-@stop
+</x-app-layout>

@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                 if ($user->isAdmin == true) {
                     return redirect('/admindash');
                 } else {
-                    return redirect(RouteServiceProvider::HOME);
+                    return redirect('/');
                 }
             }
         }

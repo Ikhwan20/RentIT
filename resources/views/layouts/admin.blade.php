@@ -34,8 +34,7 @@
 <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
 <div class="container">
     <ul class="navbar-nav d-none d-md-flex mr-auto">
-    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Renter</a></li>
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
     </ul>
     <ul class="navbar-nav">
     <li  class="nav-item"><a href="#" class="nav-link"> Call: +03-25357366 </a></li>
@@ -44,12 +43,12 @@
   
 </div> <!-- container //  -->
 </nav> <!-- header-top-light.// -->
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen bg-gray-100 d">
             @include('layouts.adminnavigation')
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
+                <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>

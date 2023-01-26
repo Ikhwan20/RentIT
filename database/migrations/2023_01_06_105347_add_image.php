@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table){
             $table->id();
-            $table->string('image_path')->nullable()->default('');
-            $table->string('image_path2')->nullable()->default('');
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('order')->onDelete('cascade');
+            $table->string('image_before')->nullable()->default('');
+            $table->string('image_after')->nullable()->default('');
             $table->timestamps();
 
         });

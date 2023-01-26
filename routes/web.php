@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit{id}', [UtilityController::class, 'edit']);
     Route::get('/category{category}', [UtilityController::class, 'category']);
     Route::post('/update/{id}', [UtilityController::class, 'update'])->name('utility.update');
-    Route::delete('utility/{id}', [UtilityController::class, 'delete'])->name('utility.delete');
+    Route::delete('utility/{id}', [UtilityController::class, 'destroy'])->name('utility.delete');
 
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::delete('user/{id}', [UserController::class, 'delete'])->name('user.delete');
@@ -58,6 +58,14 @@ Route::middleware('auth')->group(function () {
     Route::get('stripe/{id}',[StripeController::class,'paymentStripe'])->name('addmoney.paymentstripe');
 
     Route::post('add-money-stripe',[StripeController::class,'postPaymentStripe'])->name('addmoney.stripe');
+
+    Route::post('/uploadbefore',[ImageController::class,'uploadBefore'])->name('image.before');
+    Route::post('/uploadafter',[ImageController::class,'uploadAfter'])->name('image.after');
+    Route::get('/orderlist',[OrderController::class,'showorder'])->name('order.list');
+
+    Route::get('/before/{id}',[ImageController::class,'before'])->name('before');
+    Route::get('/after/{id}',[ImageController::class,'after'])->name('after');
+
 });
 
 Route::get('/utilitydesc{id}', [UtilityController::class, 'utilitydesc']);
@@ -126,13 +134,3 @@ Route::get('/account', function(){
 
 
 
-Route::get('/check', function(){
-    return view('utilitiescheck');
-});
-
-Route::get('/check1', function(){
-    return view('utilitiescheck');
-});
-
-Route::post('/check', [ImageController::class, 'upload']);
-Route::get('/check', [ImageController::class, 'render']);

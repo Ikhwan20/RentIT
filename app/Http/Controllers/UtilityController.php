@@ -48,12 +48,27 @@ class UtilityController extends Controller
      */
     public function store(Request $request)
     {
-        $requestData = $request->all();
+        $name = $request->input('name');
+        $brand = $request->input('brand');
+        $prices = $request->input('prices');
+        $category = $request->input('category');
+        $description = $request->input('description');
+        $owner = Auth::id();
+
         $fileName = time().$request->file('photo')->getClientOriginalName();
         $path = $request->file('photo')->storeAs('images', $fileName, 'public');
-        $requestData["photo"] = '/storage/'.$path;
-        $requestData["owner"] = Auth::id();
-        $utility = Utility::create($requestData);
+        $photo = '/storage/'.$path;
+
+        $utility = new Utility();
+        $utility->name = $name;
+        $utility->brand = $brand;
+        $utility->prices = $prices;
+        $utility->category = $category;
+        $utility->description = $description;
+        $utility->owner = $owner;
+        $utility->photo = $photo;
+        $utility->save();
+
         return view('utility/utilityoverview', ['utility'=> $utility]);
     }
 
@@ -102,7 +117,7 @@ class UtilityController extends Controller
         $path = $request->file('photo')->storeAs('images', $fileName, 'public');
         $photo = '/storage/'.$path;
 
-        Product::where('id', $id)->update(['name'=>$name, 'prices'=>$prices, 'brand'=>$brand, 'category'=>$category, 'description'=>$description, 'owner'=>$owner, 'photo'=>$photo]);
+        Utility::where('id', $id)->update(['name'=>$name, 'prices'=>$prices, 'brand'=>$brand, 'category'=>$category, 'description'=>$description, 'owner'=>$owner, 'photo'=>$photo]);
 
         return redirect('utility')->with('flash_message', 'Utility Updated!');
     }
@@ -113,7 +128,7 @@ class UtilityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroy($id)
     {
         Utility::where('id', $id)->delete();
         return redirect()->back()->with('success', 'Utility Deleted');   

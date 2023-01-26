@@ -26,4 +26,10 @@ class Order extends Model
     {
         return $this->belongsTo(Utility::class);
     }
+
+    public function image()
+{
+    return $this->hasOne(Image::class);
+}
+
 }

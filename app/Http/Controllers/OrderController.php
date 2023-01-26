@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Utility;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\DB;
 
@@ -95,5 +96,21 @@ class OrderController extends Controller
         $utility_ids = $orders->pluck('utility_id');
         $utilities = Utility::whereIn('id', $utility_ids)->get();
         return view('utility/order', ['orders'=> $orders, 'utility' => $utilities]);
+    }
+
+    public function showorder(){
+        $orders = Order::all();
+        if ($orders->isEmpty()) {
+            return redirect()->route('booking.dash')->with('message', 'No order');
+        }
+        $utility_ids = collect();
+        foreach($orders as $order) {
+            $utility_ids->push($order->utility_id);
+        }
+        $utilities = Utility::whereIn('id', $utility_ids)->get();
+        $images = $orders->map(function ($order) {
+            return Image::where('order_id', $order->id)->first();
+        });
+        return view('admin/order', ['orders'=> $orders, 'utility' => $utilities, 'image' => $images]);
     }
 }

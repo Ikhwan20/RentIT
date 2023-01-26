@@ -58,6 +58,7 @@
       
       
       <!-- ========================= SECTION CONTENT ========================= -->
+      
       <section class="section-content">
       <div class="container">
       
@@ -65,52 +66,31 @@
         <h3 class="section-title">Popular Items</h3>
       </header><!-- sect-heading -->
       
-        
       <div class="row">
+      @foreach($utility as $util)
+      @if($util->status == 'popular')
         <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/1.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Electric Kettle</a>
-              
-              
-              <div class="price mt-1">RM2.50</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/2.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Table Fans</a>
-              
-              
-              <div class="price mt-1">RM5.00</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/3.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Football Boots</a>
-              
-              
-              <div class="price mt-1">RM6.00</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/4.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Mug</a>
-              
-              
-              <div class="price mt-1">RM0.50</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
+            <div href="{{ url('/utilitydesc'.$util->id) }}" class="card card-product-grid">
+                <a href="{{ url('/utilitydesc'.$util->id) }}" class="img-wrap"> <img src="{{ asset($util->photo) }}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="{{ url('/utilitydesc'.$util->id) }}" class="title">{{ $util->name }}</a>
+                    <div class="price-wishlist-wrap flex flex-row justify-between">
+                    <div class="price mt-1">RM {{ number_format($util->prices, 2) }} / Day</div>
+                        <form  action="{{ route('favorite.add', $util->id) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                          <button type="submit" class="" id="checkoutbutton" >
+                          <i class="fa fa-heart text-gray bg-white border border-black rounded-full hover:text-blue-500"></i>
+                          </button>
+                      </form>
+
+                    </div>
+                </figcaption>
+            </div>
+        </div>
+ <!-- col.// -->
+        @endif
+        @endforeach
       </div> <!-- row.// -->
       
       </div> <!-- container .//  -->
@@ -128,7 +108,8 @@
       </header><!-- sect-heading -->
       
       <div class="row">
-        @foreach($utility as $util)
+      @foreach($utility as $util)
+      @if($util->status == 'new')
         <div class="col-md-3">
             <div href="{{ url('/utilitydesc'.$util->id) }}" class="card card-product-grid">
                 <a href="{{ url('/utilitydesc'.$util->id) }}" class="img-wrap"> <img src="{{ asset($util->photo) }}"> </a>
@@ -149,6 +130,7 @@
             </div>
         </div>
  <!-- col.// -->
+        @endif
         @endforeach
       </div> <!-- row.// -->
       
@@ -168,46 +150,33 @@
       </header><!-- sect-heading -->
       
       <div class="row">
+      @foreach($utility as $util)
+      @if($util->status == 'popular')
         <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/10.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Sport Shoes</a>
-              <div class="price mt-1">RM3.00</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/11.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Hanger</a>
-              <div class="price mt-1">RM0.20/item</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/12.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Electric Pot</a>
-              <div class="price mt-1">RM5.00</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
-        <div class="col-md-3">
-          <div href="#" class="card card-product-grid">
-            <a href="#" class="img-wrap"> <img src="assets/images/items/13.jpg"> </a>
-            <figcaption class="info-wrap">
-              <a href="#" class="title">Electric Shaver</a>
-              <div class="price mt-1">RM3.00</div> <!-- price-wrap.// -->
-            </figcaption>
-          </div>
-        </div> <!-- col.// -->
+            <div href="{{ url('/utilitydesc'.$util->id) }}" class="card card-product-grid">
+                <a href="{{ url('/utilitydesc'.$util->id) }}" class="img-wrap"> <img src="{{ asset($util->photo) }}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="{{ url('/utilitydesc'.$util->id) }}" class="title">{{ $util->name }}</a>
+                    <div class="price-wishlist-wrap flex flex-row justify-between">
+                    <div class="price mt-1">RM {{ number_format($util->prices, 2) }} / Day</div>
+                        <form  action="{{ route('favorite.add', $util->id) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                <button type="submit" class="bg-white border border-black rounded-full hover:text-blue-500" id="checkoutbutton" >
+                                  <i class="fa fa-heart text-gray"></i>
+                                </button>
+                      </form>
+
+                    </div>
+                </figcaption>
+            </div>
+        </div>
+ <!-- col.// -->
+        @endif
+        @endforeach
       </div> <!-- row.// -->
-      
-      </div> <!-- container .//  -->
       </section>
+
       <!-- ========================= SECTION CONTENT END// ========================= -->
       
       <!-- ========================= SECTION  ========================= -->

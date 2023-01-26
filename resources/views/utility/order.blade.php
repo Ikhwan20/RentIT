@@ -1,5 +1,4 @@
 <x-booking-layout>
-
 <br/>
 @foreach($orders as $order)
 <div class="flex flex-row rounded-lg overflow-hidden shadow-md mx-10">
@@ -14,9 +13,25 @@
                 End : {{$order->end}}
             </span>
         </div>
-        <button class="bg-blue-500 text-white rounded-full ml-3 px-4 py-1">Update</button>
+        @if($order->active == false && $order->ended == false)
+        <a href="/chatify" class="text-blue-500 hover:text-blue-800">
+        <button class="bg-blue-500 text-white rounded-full ml-3 px-4 py-1">Chat Owner</button>
+        </a>
+        @endif
+        @if($order->active == true && $order->ended == false)
+        <a href="{{ url('/before/'.$order->id) }}" class="text-blue-500 hover:text-blue-800">
+        <button class="bg-blue-500 text-white rounded-full ml-3 px-4 py-1">Upload Image Before</button>
+        </a>
+        @endif
+        @if($order->active == false && $order->ended == true)
+        <a href="{{ url('/after/'.$order->id) }}" class="text-blue-500 hover:text-blue-800">
+        <button class="bg-blue-500 text-white rounded-full ml-3 px-4 py-1">Upload Image After</button>
+        </a>
+        <a href="/check" class="text-blue-500 hover:text-blue-800">
+        <button class="bg-blue-500 text-white rounded-full ml-3 px-4 py-1">Rate</button>
+        </a>
+        @endif
     </div>
 </div>
 @endforeach
-
 </x-booking-layout>
