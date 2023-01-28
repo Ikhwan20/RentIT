@@ -35,25 +35,12 @@
     src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
     async
     ></script>
-
+    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    <script>
-    document.addEventListener("turbolinks:before-cache", function () {
-        if (window.Trustpilot) {
-        Trustpilot.Modules.WidgetManagement.removeWidgets()
-        }
-    })
-
-    document.addEventListener("turbolinks:load", function () {
-        if (window.Trustpilot) {
-        Trustpilot.Modules.WidgetManagement.findAndApplyWidgets()
-        }
-    })
-    </script>
 
         <!-- Custom styles for this template -->
         <script src="assets/js/jquery.min.js" type="text/javascript"></script>

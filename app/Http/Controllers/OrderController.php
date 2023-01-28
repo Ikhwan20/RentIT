@@ -14,10 +14,26 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
+
         $utility = $request->input('utility');
         $renter = Auth::id();
         $start = $request->input('start');
         $end = $request->input('end');
+
+        $orders = Order::where('utility_id', $utility)->get();
+        
+        //if else that check if $start and $end are within $orders->start and $orders->end
+        foreach($orders as $order) {
+            $orderStart = new \DateTime($order->start);
+            $orderEnd = new \DateTime($order->end);
+            $inputStart = new \DateTime($start);
+            $inputEnd = new \DateTime($end);
+    
+            if(($inputStart >= $orderStart && $inputStart < $orderEnd) || ($inputEnd > $orderStart && $inputEnd <= $orderEnd)) {
+                session()->flash('message', 'Date has been occupied');
+                return redirect()->back();
+            }
+        }
 
         $datetime1 = new \DateTime($start);
         $datetime2 = new \DateTime($end);

@@ -1,4 +1,9 @@
 <x-app-layout>
+@if(session()->has('message'))
+    <div class="alert alert-danger">
+        {{ session()->get('message') }}
+    </div>
+@endif
 @foreach($utility as $util)
     <div class="">
         <form action="{{ url('/createorder') }}" method="POST" enctype="multipart/form-data" class="flex w-full items-center justify-center mt-10" >
