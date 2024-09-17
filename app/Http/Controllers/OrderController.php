@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+    define("NO_ORDER","You have no upcoming order");
+
     public function store(Request $request)
     {
 
@@ -84,7 +86,7 @@ class OrderController extends Controller
         $id = Auth::id();
         $orders = Order::where('renter', $id)->where('active', true)->get();
         if ($orders->isEmpty()) {
-            return redirect()->route('booking.dash')->with('message', 'You have no upcoming order');
+            return redirect()->route('booking.dash')->with('message', NO_ORDER);
         }
         $utility_ids = $orders->pluck('utility_id');
         $utilities = Utility::whereIn('id', $utility_ids)->get();
@@ -95,7 +97,7 @@ class OrderController extends Controller
         $id = Auth::id();
         $orders = Order::where('renter', $id)->where('active', false)->where('ended', false)->get();
         if ($orders->isEmpty()) {
-            return redirect()->route('booking.dash')->with('message', 'You have no upcoming order');
+            return redirect()->route('booking.dash')->with('message', NO_ORDER);
         }
         $utility_ids = $orders->pluck('utility_id');
         $utilities = Utility::whereIn('id', $utility_ids)->get();
@@ -107,7 +109,7 @@ class OrderController extends Controller
         $id = Auth::id();
         $orders = Order::where('renter', $id)->where('ended', true)->get();
         if ($orders->isEmpty()) {
-            return redirect()->route('booking.dash')->with('message', 'You have no upcoming order');
+            return redirect()->route('booking.dash')->with('message', NO_ORDER);
         }
         $utility_ids = $orders->pluck('utility_id');
         $utilities = Utility::whereIn('id', $utility_ids)->get();
@@ -117,7 +119,7 @@ class OrderController extends Controller
     public function showorder(){
         $orders = Order::all();
         if ($orders->isEmpty()) {
-            return redirect()->route('booking.dash')->with('message', 'No order');
+            return redirect()->route('booking.dash')->with('message', NO_ORDER);
         }
         $utility_ids = collect();
         foreach($orders as $order) {
